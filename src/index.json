@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Autocomplete",
+    "description": "The autocomplete component is a really useful component if you want a user to be able to enter some sort of text but also be able to choose between a range of predefined or dynamic options at the same time."
+  },
+  {
+    "name": "Avatar",
+    "description": "The avatar is a component that is really useful when you want to display some sort of a profile picture or logo. Just be aware that only square logos with only a icon will look good on the avatar component."
+  },
+  {
+    "name": "Badge",
+    "description": "The badge component is a good component if you want to highlight some sort of activity on a page that the user is not currently on. For example you might have a messages page, and in your header you could have a link to the page where you want to show the amount of new messages."
+  },
+  {
+    "name": "Button",
+    "description": "The button have a couple of different styles. Default, Primary, Error and Link. It has all the default HTML Button attributes and should be used when a user wants to make any sort of action."
+  },
+  {
+    "name": "Card",
+    "description": "The card component is a component that can be used in very many different scenarios. It's versatile lower level component that provides som breathing room and show to preferably grouped content."
+  },
+  {
+    "name": "Checkbox",
+    "description": "The checkbox component should be used when you want users to agree on some sort of condition. Or for example when you want to add filters for a table, the checkbox is a good component."
+  },
+  {
+    "name": "Divider",
+    "description": "The divider component should be used when you want to separate two components from each other. For example you might want to separate a heading and its subheading or paragraph."
+  },
+  {
+    "name": "Dropdown",
+    "description": "The dropdown component is a component that you can use when you want a user to pick a option from several alternatives. For example this could be useful in a navigation bar when clicking the profile picture."
+  },
+  {
+    "name": "Grid",
+    "description": "The grid component is quite useful if you want build some sort of layout that has several columns perhaps different sized rows. It can also be helpful if you want several columns to turn into one column on a small screen."
+  },
+  {
+    "name": "Input",
+    "description": "The input component should be used when you want to collect some sort of text information from a user. For example when signing up or logging in and you want them to enter a email and password."
+  },
+  {
+    "name": "List",
+    "description": "The list component is really useful if you want to list to the user a smaller amount of short noted information. For example a list of features or functionalities of a product or similar."
+  },
+  {
+    "name": "Modal",
+    "description": "The modal component is useful if you want the user to be able to fill out some information or choose a action without having to go to another page. Use this if there is too much information for a popover but not enough to have a separate page."
+  },
+  {
+    "name": "PopConfirm",
+    "description": "The popconfirm component is really good if you want to quickly make the user confirm some sort of action. A good example of this is when a user want to delete some entity and you want to confirm their action."
+  },
+  {
+    "name": "Popover",
+    "description": "The popover component is a component to use when you quickly want to display some information or let the user be able to quickly create something without having to go another page."
+  },
+  {
+    "name": "Progress",
+    "description": "The progress component is really useful if you want to display for the user the progress they or some other entity has made over a period of time. For example the progress on a course or the downloading of a file."
+  },
+  {
+    "name": "Select",
+    "description": "The select component is good if you want your user to select between a certain amount of different options but don't want them to expect a following action until some sort of button or call to action is clicked."
+  },
+  {
+    "name": "Spinner",
+    "description": "The spinner component is a really good component when you want to indicate that some sort of process is in a loading state. For example when you are loading data onto a page or loading the entire page."
+  },
+  {
+    "name": "Stack",
+    "description": "The stack component is what mostly replaces flex and margins. This lets you wrap several elements and decide which direction it should list the elements, as well as how much spacing should be added between each element."
+  },
+  {
+    "name": "Table",
+    "description": "The table component is really useful if you want to display structured data to a user. For example if you have an array of products or customers, this is a good component for displaying something like that."
+  },
+  {
+    "name": "Tag",
+    "description": "The tag components i a useful component to use if you want to list an array of short info points. For example in a instagram post the user might have entered a handful hashtags and you want to display them."
+  },
+  {
+    "name": "Toast",
+    "description": "The toast component is a component that should be used when you want to quickly display some short information about if a action has succeeded or failed for some reason. It is not the same as a notification."
+  },
+  {
+    "name": "Tooltip",
+    "description": "The tooltip is a component that is very useful if you want to highlight some really basic information to the user at a quick glance. For example, if you have a button with only an icon this might be helpful."
+  },
+  {
+    "name": "Message",
+    "description": "The message utility is good if you want to deliver some sort of important message to the user. For example an error that occurs after some sort of user action, or a less complex success message."
+  },
+  {
+    "name": "Notification",
+    "description": "The notification utility is good if you want to deliver some sort of important message to the user. For example an error that occurs after some sort of user action, or a more complex success message."
+  }
+]
