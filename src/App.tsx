@@ -45,19 +45,6 @@ function App() {
 
   return (
     <div>
-      <Button
-        data-feedback-fish
-        variant='success'
-        style={{
-          position: 'fixed',
-          bottom: '2rem',
-          right: '2rem',
-          zIndex: 100
-        }}
-      >
-        Got feedback?
-      </Button>
-
       <Card block style={{ marginBottom: '2.5rem' }}>
         <Stack style={{ justifyContent: 'space-between' }} align='center'>
           <Autocomplete
