@@ -2,10 +2,49 @@ body {
   background-color: #006aff;
 }
 
+.documentation-sidebar {
+  width: 250px;
+  border-right: 1px solid #eee;
+  height: 100vh;
+  overflow-y: auto;
+  position: fixed;
+  padding-bottom: 1rem;
+  .list {
+    list-style-type: none;
+    h4 {
+      padding: 0.875rem 1.5rem;
+      text-transform: capitalize;
+      border-bottom: 1px solid #eee;
+      color: rgb(187, 187, 187);
+      margin-top: 0.75rem;
+      font-size: 0.85em;
+      user-select: none;
+      cursor: default;
+    }
+    a {
+      text-decoration: none;
+      background-color: none;
+      padding: 0.875rem 1.5rem;
+      display: block;
+      color: #333;
+      font-size: 0.875em;
+      user-select: none;
+      &:hover {
+        color: #006aff;
+      }
+    }
+  }
+}
+
 .documentation-page {
-  padding: 3rem;
-  max-width: 1400px;
-  margin: 0 auto;
+  display: flex;
+  .documentation-content-wrapper {
+    flex: 1;
+    margin-left: 250px;
+    .documentation-content {
+      padding: 3rem;
+    }
+  }
 }
 
 .start-page {
