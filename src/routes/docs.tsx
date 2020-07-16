@@ -47,10 +47,6 @@ function Docs() {
     false
   );
 
-  React.useEffect(() => {
-    document.body.style.background = "#ffffff";
-  }, []);
-
   return (
     <div className="documentation-page">
       <Sidebar />

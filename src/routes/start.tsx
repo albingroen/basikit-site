@@ -12,6 +12,9 @@ const Start = () => {
 
   React.useEffect(() => {
     document.body.style.background = "#006aff";
+    return () => {
+      document.body.style.background = "#ffffff";
+    }
   }, []);
 
   return (
