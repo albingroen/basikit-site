@@ -18,6 +18,12 @@ const Sidebar = () => {
         }}
       />
       <div className="list">
+        <div>
+          <h4>General</h4>
+          <HashLink to="/documentation#getting-started">
+            <li>Getting started</li>
+          </HashLink>
+        </div>
         {Object.keys(groupedComponents)
           .sort((category) => groupedComponents[category].length)
           .map((category) => (

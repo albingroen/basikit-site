@@ -55,9 +55,9 @@ function Docs() {
     <div className="documentation-page">
       <Sidebar />
       <div className="documentation-content-wrapper">
-        <Card block>
+        <Card style={{ border: 'none', borderBottom: '1px solid #eee' }} block>
           <Stack style={{ justifyContent: "space-between" }} align="center">
-            <ComponentSearch />
+            <ComponentSearch style={{ borderColor: '#eee', width: 400 }} />
             <Stack size="small">
               <a
                 target="_blank"
