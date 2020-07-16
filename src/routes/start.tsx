@@ -10,6 +10,10 @@ import { Link } from "react-router-dom";
 const Start = () => {
   const { pushMessage } = useMessage();
 
+  React.useEffect(() => {
+    document.body.style.background = "#006aff";
+  }, []);
+
   return (
     <div className="start-page">
       <header>

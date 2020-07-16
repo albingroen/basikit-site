@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { kebabCase } from "lodash-es";
 import { CopyBlock, nord } from "react-code-blocks";
 import componentIndex from "../index.json";
@@ -36,13 +36,19 @@ function Docs() {
   const { pushMessage } = useMessage();
   const { pushModal } = useModal();
 
-  const [autocompleteValue, setAutocompleteValue] = useState<string>();
-  const [checked, setChecked] = useState<boolean>(false);
-  const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [selectValue, setSelectValue] = useState<string>();
-  const [toastErrorOpen, setToastErrorOpen] = useState<boolean>(false);
-  const [toastOpen, setToastOpen] = useState<boolean>(false);
-  const [toastSuccessOpen, setToastSuccessOpen] = useState<boolean>(false);
+  const [autocompleteValue, setAutocompleteValue] = React.useState<string>();
+  const [checked, setChecked] = React.useState<boolean>(false);
+  const [modalOpen, setModalOpen] = React.useState<boolean>(false);
+  const [selectValue, setSelectValue] = React.useState<string>();
+  const [toastErrorOpen, setToastErrorOpen] = React.useState<boolean>(false);
+  const [toastOpen, setToastOpen] = React.useState<boolean>(false);
+  const [toastSuccessOpen, setToastSuccessOpen] = React.useState<boolean>(
+    false
+  );
+
+  React.useEffect(() => {
+    document.body.style.background = "#ffffff";
+  }, []);
 
   return (
     <div className="documentation-page">
