@@ -14,7 +14,7 @@ const Start = () => {
     document.body.style.background = "#006aff";
     return () => {
       document.body.style.background = "#ffffff";
-    }
+    };
   }, []);
 
   return (

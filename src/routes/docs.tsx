@@ -51,9 +51,9 @@ function Docs() {
     <div className="documentation-page">
       <Sidebar />
       <div className="documentation-content-wrapper">
-        <Card style={{ border: 'none', borderBottom: '1px solid #eee' }} block>
+        <Card style={{ border: "none", borderBottom: "1px solid #eee" }} block>
           <Stack style={{ justifyContent: "space-between" }} align="center">
-            <ComponentSearch style={{ borderColor: '#eee', width: 400 }} />
+            <ComponentSearch style={{ borderColor: "#eee", width: 400 }} />
             <Stack size="small">
               <a
                 target="_blank"
@@ -84,13 +84,18 @@ function Docs() {
           </Stack>
         </Card>
 
-
         <Stack
           direction="column"
           size="large"
           className="documentation-content"
         >
-        <iframe src="https://github.com/sponsors/albingroen/card" title="Sponsor albingroen" height="180" width="600" style={{ border: 'none', }} />
+          <iframe
+            src="https://github.com/sponsors/albingroen/card"
+            title="Sponsor albingroen"
+            height="200"
+            width="600"
+            style={{ border: "none" }}
+          />
 
           <header style={{ width: "100%" }}>
             <Stack block direction="column" size="large">
