@@ -2845,11 +2845,14 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-basikit@^1.3.7:
-  version "1.3.7"
-  resolved "https://registry.yarnpkg.com/basikit/-/basikit-1.3.7.tgz#2a049b54795f205eb2a6e5c13e6ce0ed16c16828"
-  integrity sha512-hV0DsjWWBB1wymDIrAzuVaDMIaaUR6T/7Mu/saVAxxHf1v5dOor2pw1XN+5PCGZ1sq+jHKFHSMBr1M0Ux+8hxw==
+basikit@^1.3.9:
+  version "1.3.9"
+  resolved "https://registry.yarnpkg.com/basikit/-/basikit-1.3.9.tgz#daedfca9b7f2aea9547376b4b3af5cda33add76e"
+  integrity sha512-/Mnf07UnFlroDrL8g5D1YW9EtsJBaC7928FNY8JsJ/OzbDmwYGT+wGU5ZCBcH806fxJYpIzd/fq/o0JcvFaNLA==
   dependencies:
+    "@fortawesome/fontawesome-svg-core" "^1.2.30"
+    "@fortawesome/free-solid-svg-icons" "^5.14.0"
+    "@fortawesome/react-fontawesome" "^0.1.11"
     dot-prop "^5.2.0"
 
 batch@0.6.1:
