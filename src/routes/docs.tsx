@@ -84,11 +84,14 @@ function Docs() {
           </Stack>
         </Card>
 
+
         <Stack
           direction="column"
           size="large"
           className="documentation-content"
         >
+        <iframe src="https://github.com/sponsors/albingroen/card" title="Sponsor albingroen" height="180" width="600" style={{ border: 'none', }} />
+
           <header style={{ width: "100%" }}>
             <Stack block direction="column" size="large">
               <a href="/">
