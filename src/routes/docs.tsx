@@ -31,6 +31,7 @@ import {
 import { logo } from "../lib";
 import Sidebar from "../components/sidebar";
 import ComponentSearch from "../components/component-search";
+import { SponsorModalContext } from "../App";
 
 function Docs() {
   const { pushNotification } = useNotification();
@@ -47,6 +48,10 @@ function Docs() {
     false
   );
 
+  const { setIsOpen: setIsSponsorModalOpen } = React.useContext(
+    SponsorModalContext
+  );
+
   return (
     <div className="documentation-page">
       <Sidebar />
@@ -54,7 +59,16 @@ function Docs() {
         <Card style={{ border: "none", borderBottom: "1px solid #eee" }} block>
           <Stack style={{ justifyContent: "space-between" }} align="center">
             <ComponentSearch style={{ borderColor: "#eee", width: 400 }} />
-            <Stack size="small">
+            <Stack size="small" align="center">
+              <Button
+                variant="link"
+                onClick={() => setIsSponsorModalOpen(true)}
+              >
+                Improve my React app{" "}
+                <span role="img" aria-label="emoji">
+                  ✨
+                </span>
+              </Button>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
