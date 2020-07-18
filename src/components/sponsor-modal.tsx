@@ -32,7 +32,7 @@ const SponsorModal: React.FC<ISponsorModalProps> = (props) => {
       });
 
     axios
-      .post(`/.netlify/functions/subscribe-to-newsletter`, { foo: "bar" })
+      .post(`/.netlify/functions/subscribe-to-newsletter`, { email })
       .then((res) => {
         console.log({ res });
       })
