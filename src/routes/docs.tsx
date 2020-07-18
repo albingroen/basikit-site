@@ -298,6 +298,28 @@ function Docs() {
                     <Button variant="link">Link button</Button>
                   </Stack>
 
+                  <Stack direction="column">
+                    <p>Loading state</p>
+                    <Stack size="small">
+                      <Button loading>Default button</Button>
+                      <Button loading variant="primary">
+                        Primary button
+                      </Button>
+                      <Button loading variant="success">
+                        Success button
+                      </Button>
+                      <Button loading variant="error">
+                        Error button
+                      </Button>
+                      <Button loading bordered>
+                        Bordered button
+                      </Button>
+                      <Button loading variant="link">
+                        Link button
+                      </Button>
+                    </Stack>
+                  </Stack>
+
                   <p>
                     If you supply a <code>block</code> prop the button will span
                     the entire length
@@ -331,6 +353,28 @@ function Docs() {
     <Button variant="error">Error button</Button>
     <Button bordered>Bordered button</Button>
     <Button variant="link">Link button</Button>
+  </Stack>
+
+  <Stack direction="column">
+    <p>Loading state</p>
+    <Stack size="small">
+      <Button loading>Default button</Button>
+      <Button loading variant="primary">
+        Primary button
+      </Button>
+      <Button loading variant="success">
+        Success button
+      </Button>
+      <Button loading variant="error">
+        Error button
+      </Button>
+      <Button loading bordered>
+        Bordered button
+      </Button>
+      <Button loading variant="link">
+        Link button
+      </Button>
+    </Stack>
   </Stack>
 
   <p>
@@ -417,6 +461,20 @@ function Docs() {
                       <tr>
                         <td>
                           <code>block</code>
+                        </td>
+                        <td>
+                          <code>boolean</code>
+                        </td>
+                        <td>
+                          <code>false</code>
+                        </td>
+                        <td>
+                          <code>false</code>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>loading</code>
                         </td>
                         <td>
                           <code>boolean</code>
