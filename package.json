@@ -18,7 +18,7 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/react-router-hash-link": "^1.2.1",
     "axios": "^0.19.2",
-    "basikit": "^1.4.0",
+    "basikit": "^1.4.1",
     "feedback-fish": "^0.1.11",
     "lodash-es": "^4.17.15",
     "mongodb": "^3.5.9",

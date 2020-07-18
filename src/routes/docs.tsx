@@ -31,7 +31,6 @@ import {
 import { logo } from "../lib";
 import Sidebar from "../components/sidebar";
 import ComponentSearch from "../components/component-search";
-import { NewsletterModalContext } from "../App";
 
 function Docs() {
   const { pushNotification } = useNotification();
@@ -48,10 +47,6 @@ function Docs() {
     false
   );
 
-  const { setIsOpen: setIsNewsletterModalOpen } = React.useContext(
-    NewsletterModalContext
-  );
-
   return (
     <div className="documentation-page">
       <Sidebar />
@@ -60,15 +55,17 @@ function Docs() {
           <Stack style={{ justifyContent: "space-between" }} align="center">
             <ComponentSearch style={{ borderColor: "#eee", width: 400 }} />
             <Stack size="small" align="center">
-              <Button
-                variant="link"
-                onClick={() => setIsNewsletterModalOpen(true)}
+              <a
+                data-formkit-toggle="0c30fec2a6"
+                href="https://basikit-newsletter.ck.page/0c30fec2a6"
               >
-                Improve my React app{" "}
-                <span role="img" aria-label="emoji">
-                  ✨
-                </span>
-              </Button>
+                <Button variant="link">
+                  Improve my React app{" "}
+                  <span role="img" aria-label="emoji">
+                    ✨
+                  </span>
+                </Button>
+              </a>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
