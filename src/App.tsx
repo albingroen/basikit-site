@@ -16,7 +16,7 @@ export const SponsorModalContext = React.createContext<{
 
 const App = () => {
   const [isSponsorModalOpen, setIsSponsorModalOpen] = React.useState<boolean>(
-    true
+    false
   );
 
   return (

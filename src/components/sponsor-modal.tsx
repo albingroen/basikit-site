@@ -31,14 +31,24 @@ const SponsorModal: React.FC<ISponsorModalProps> = (props) => {
         id: "newsletter-email-error",
       });
 
-    axios
+    const result = await axios
       .post(`/.netlify/functions/subscribe-to-newsletter`, { email })
-      .then((res) => {
-        console.log({ res });
-      })
       .catch((err) => {
-        console.log({ err });
+        pushMessage({
+          title: "Failed to subscribe!",
+          id: "subscribe-to-newsletter-fail",
+        });
       });
+
+    if (result && result.status === 200) {
+      pushMessage({
+        variant: "success",
+        title: "Subscribed to newsletter!",
+        id: "subscribe-to-newsletter-success",
+      });
+
+      props.onClose();
+    }
   };
 
   return (

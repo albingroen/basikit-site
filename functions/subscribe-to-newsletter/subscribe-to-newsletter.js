@@ -5,12 +5,14 @@ exports.handler = async function (event, context, callback) {
     "functions/subscribe-to-newsletter/contacts.txt",
     JSON.parse(event.body).email + "\n",
     (err) => {
-      if (err) throw err;
+      if (err) {
+        throw err;
+      }
     }
   );
 
   callback(null, {
     statusCode: 200,
-    body: "Hello, World",
+    body: "Successfully subscribed to newsletter!",
   });
 };
