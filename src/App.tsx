@@ -4,9 +4,9 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import FeedbackForm from "./components/feedback-form";
 import Start from "./routes/start";
 import { Button, Stack } from "basikit";
-import SponsorModal from "./components/sponsor-modal";
+import NewsletterModal from "./components/newsletter-modal";
 
-export const SponsorModalContext = React.createContext<{
+export const NewsletterModalContext = React.createContext<{
   isOpen: boolean;
   setIsOpen: (value: boolean) => void;
 }>({
@@ -15,13 +15,16 @@ export const SponsorModalContext = React.createContext<{
 });
 
 const App = () => {
-  const [isSponsorModalOpen, setIsSponsorModalOpen] = React.useState<boolean>(
-    false
-  );
+  const [isNewsletterModalOpen, setIsNewsletterModalOpen] = React.useState<
+    boolean
+  >(false);
 
   return (
-    <SponsorModalContext.Provider
-      value={{ isOpen: isSponsorModalOpen, setIsOpen: setIsSponsorModalOpen }}
+    <NewsletterModalContext.Provider
+      value={{
+        isOpen: isNewsletterModalOpen,
+        setIsOpen: setIsNewsletterModalOpen,
+      }}
     >
       <BrowserRouter>
         <Stack direction="column" align="end">
@@ -49,11 +52,11 @@ const App = () => {
           <Route exact component={Docs} path="/documentation" />
         </Switch>
 
-        {isSponsorModalOpen && (
-          <SponsorModal onClose={() => setIsSponsorModalOpen(false)} />
+        {isNewsletterModalOpen && (
+          <NewsletterModal onClose={() => setIsNewsletterModalOpen(false)} />
         )}
       </BrowserRouter>
-    </SponsorModalContext.Provider>
+    </NewsletterModalContext.Provider>
   );
 };
 

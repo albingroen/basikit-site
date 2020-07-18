@@ -12,12 +12,13 @@ import {
   Tooltip,
   useMessage,
 } from "basikit";
+import { apiUrl } from "../lib";
 
-interface ISponsorModalProps {
+interface INewsletterModalProps {
   onClose: () => void;
 }
 
-const SponsorModal: React.FC<ISponsorModalProps> = (props) => {
+const NewsletterModal: React.FC<INewsletterModalProps> = (props) => {
   const [email, setEmail] = useState<string>("");
   const { pushMessage } = useMessage();
 
@@ -32,7 +33,7 @@ const SponsorModal: React.FC<ISponsorModalProps> = (props) => {
       });
 
     const result = await axios
-      .post(`/.netlify/functions/subscribe-to-newsletter`, { email })
+      .post(`${apiUrl}/subscribe-to-newsletter`, { email })
       .catch((err) => {
         pushMessage({
           title: "Failed to subscribe!",
@@ -109,7 +110,10 @@ const SponsorModal: React.FC<ISponsorModalProps> = (props) => {
               value={email}
               onChange={(e) => setEmail(e.currentTarget.value)}
             />
-            <Checkbox label="I allow my email to be used is marketing purposes" />
+            <Checkbox
+              required
+              label="I allow my email to be used is marketing purposes"
+            />
             <Button variant="success" block>
               Sign up now
             </Button>
@@ -120,4 +124,4 @@ const SponsorModal: React.FC<ISponsorModalProps> = (props) => {
   );
 };
 
-export default SponsorModal;
+export default NewsletterModal;

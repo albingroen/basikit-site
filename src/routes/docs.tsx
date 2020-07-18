@@ -31,7 +31,7 @@ import {
 import { logo } from "../lib";
 import Sidebar from "../components/sidebar";
 import ComponentSearch from "../components/component-search";
-import { SponsorModalContext } from "../App";
+import { NewsletterModalContext } from "../App";
 
 function Docs() {
   const { pushNotification } = useNotification();
@@ -48,8 +48,8 @@ function Docs() {
     false
   );
 
-  const { setIsOpen: setIsSponsorModalOpen } = React.useContext(
-    SponsorModalContext
+  const { setIsOpen: setIsNewsletterModalOpen } = React.useContext(
+    NewsletterModalContext
   );
 
   return (
@@ -62,7 +62,7 @@ function Docs() {
             <Stack size="small" align="center">
               <Button
                 variant="link"
-                onClick={() => setIsSponsorModalOpen(true)}
+                onClick={() => setIsNewsletterModalOpen(true)}
               >
                 Improve my React app{" "}
                 <span role="img" aria-label="emoji">
