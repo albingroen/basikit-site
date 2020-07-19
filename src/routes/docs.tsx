@@ -24,6 +24,7 @@ import {
   Tag,
   Toast,
   Tooltip,
+  Typography,
   useMessage,
   useNotification,
   useModal,
@@ -31,6 +32,8 @@ import {
 import { logo } from "../lib";
 import Sidebar from "../components/sidebar";
 import ComponentSearch from "../components/component-search";
+
+const { Heading, Text } = Typography;
 
 function Docs() {
   const { pushNotification } = useNotification();
@@ -107,18 +110,18 @@ function Docs() {
               </a>
               <Stack direction="column" size="large">
                 <Stack direction="column">
-                  <h1>Basikit for React</h1>
-                  <p>
+                  <Heading>Basikit for React</Heading>
+                  <Text>
                     <span role="img" aria-label="emoji">
                       📚
                     </span>{" "}
                     Yet another React.js ui-kit
-                  </p>
+                  </Text>
                 </Stack>
 
                 <Stack direction="column" size="small">
-                  <h2>What is basikit?</h2>
-                  <p style={{ maxWidth: 600 }}>
+                  <Heading level={2}>What is basikit?</Heading>
+                  <Text style={{ maxWidth: 600 }}>
                     Basikit is a{" "}
                     <strong>
                       Javascript NPM module with up towards 30 React.js jsx
@@ -127,12 +130,12 @@ function Docs() {
                     . They are meant to enable you to quickly get a modern and
                     accessible user interface up and running as fast as
                     possible.
-                  </p>
+                  </Text>
                 </Stack>
               </Stack>
 
               <Stack direction="column">
-                <h2>Product features</h2>
+                <Heading level={2}>Product features</Heading>
                 <List
                   items={[
                     {
@@ -173,19 +176,19 @@ function Docs() {
             style={{ width: 950 }}
             id="getting-started"
           >
-            <h1>Getting started</h1>
+            <Heading>Getting started</Heading>
 
             <Stack size="large" direction="column" block>
               <Card id="installing-package" block>
                 <Stack direction="column" size="large" block>
                   <Stack direction="column" size="small">
-                    <h2>Installing package</h2>
+                    <Heading level={2}>Installing package</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       You can install the basikit package by simply using your
                       Javascript package manager, like npm or yarn. Just run one
                       of the following commands listed down below.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack direction="column" block>
@@ -202,13 +205,13 @@ function Docs() {
               <Card id="including-styles" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Including styles</h2>
+                    <Heading level={2}>Including styles</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       To get proper styling for basikit, you need to import the
                       main css file located at basikit/dist/index.css. This will
                       ensure that all components look the way they should.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <code className="block code-block-inline">
@@ -220,14 +223,14 @@ function Docs() {
               <Card id="app-container" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>App container</h2>
+                    <Heading level={2}>App container</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       If you want utility functions like notifications, toasts
                       and modals to work for example, you need to wrap your app
                       in our Container component. This ensures the necessary
                       context is accessible for the components.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <div className="code-block">
@@ -262,20 +265,209 @@ function Docs() {
             style={{ width: 950 }}
             id="components"
           >
-            <h1>Components</h1>
+            <Heading>Components</Heading>
 
             <Stack direction="column" size="large" block>
+              <Card id="typography" block>
+                <Stack direction="column" size="large">
+                  <Stack direction="column" size="small">
+                    <Heading level={2}>Typography</Heading>
+                    <Divider spacing="medium" />
+                    <Text style={{ maxWidth: "80ch" }}>
+                      The typography component is an abstraction of the default
+                      html heading and p tags. They use the default css font
+                      sizes and all headings have a default font-weight of 500.
+                      The text component has a line-height of 1.5 and a slightly
+                      grayer color.
+                    </Text>
+                  </Stack>
+
+                  <Stack direction="column">
+                    <Text>Heading:</Text>
+                    <Stack size="small" direction="column">
+                      <Heading>Basikit component library</Heading>
+                      <Heading level={2}>Basikit component library</Heading>
+                      <Heading level={3}>Basikit component library</Heading>
+                      <Heading level={4}>Basikit component library</Heading>
+                      <Heading level={5}>Basikit component library</Heading>
+                      <Heading level={6}>Basikit component library</Heading>
+                    </Stack>
+                  </Stack>
+
+                  <Stack direction="column">
+                    <Text>Default Text:</Text>
+                    <Text>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Cumque, debitis consequatur. Magnam quasi perspiciatis
+                      quia consequatur corporis animi quibusdam sapiente,
+                      explicabo inventore ullam facere, nobis minima at labore
+                      fuga iure.
+                    </Text>
+                  </Stack>
+
+                  <Stack direction="column">
+                    <Text>Error Text:</Text>
+                    <Text variant="error">
+                      Failed to subscribe to newsletter!
+                    </Text>
+                  </Stack>
+
+                  <Stack direction="column">
+                    <Text>Bold Text:</Text>
+                    <Text bold>This message is very important!</Text>
+                  </Stack>
+
+                  <Stack direction="column">
+                    <Text>Italic Text:</Text>
+                    <Text italic>The following conditions do apply*</Text>
+                  </Stack>
+
+                  <div className="code-block">
+                    <CopyBlock
+                      text={`const { Heading, Text } = Typography
+
+<Stack direction="column">
+  <Text>Heading:</Text>
+  <Stack size="small" direction="column">
+    <Heading>Basikit component library</Heading>
+    <Heading level={2}>Basikit component library</Heading>
+    <Heading level={3}>Basikit component library</Heading>
+    <Heading level={4}>Basikit component library</Heading>
+    <Heading level={5}>Basikit component library</Heading>
+    <Heading level={6}>Basikit component library</Heading>
+  </Stack>
+</Stack>
+
+<Stack direction="column">
+  <Text>Default Text:</Text>
+  <Text>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Cumque, debitis consequatur. Magnam quasi perspiciatis
+    quia consequatur corporis animi quibusdam sapiente,
+    explicabo inventore ullam facere, nobis minima at labore
+    fuga iure.
+  </Text>
+</Stack>
+
+<Stack direction="column">
+  <Text>Error Text:</Text>
+  <Text variant="error">
+    Failed to subscribe to newsletter!
+  </Text>
+</Stack>
+
+<Stack direction="column">
+  <Text>Bold Text:</Text>
+  <Text bold>This message is very important!</Text>
+</Stack>                  
+
+<Stack direction="column">
+  <Text>Italic Text:</Text>
+  <Text italic>The following conditions do apply*</Text>
+</Stack>`}
+                      language="jsx"
+                      theme={nord}
+                    />
+                  </div>
+
+                  <Stack direction="column" block>
+                    <Heading level={3}>
+                      Component properties (<code>Heading</code>) (
+                      <i>extends html heading attributes</i>)
+                    </Heading>
+                    <table className="table">
+                      <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Required</th>
+                        <th>Default</th>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>level</code>
+                        </td>
+                        <td>
+                          <code>1 | 2 | 3 | 4 | 5 | 6</code>
+                        </td>
+                        <td>
+                          <code>false</code>
+                        </td>
+                        <td>
+                          <code>1</code>
+                        </td>
+                      </tr>
+                    </table>
+                  </Stack>
+                  <Stack direction="column" block>
+                    <Heading level={3}>
+                      Component properties (<code>Text</code>) (
+                      <i>extends html paragraph attributes</i>)
+                    </Heading>
+                    <table className="table">
+                      <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Required</th>
+                        <th>Default</th>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>variant</code>
+                        </td>
+                        <td>
+                          <code>'default' | 'error'</code>
+                        </td>
+                        <td>
+                          <code>false</code>
+                        </td>
+                        <td>
+                          <code>'default'</code>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>bold</code>
+                        </td>
+                        <td>
+                          <code>boolean</code>
+                        </td>
+                        <td>
+                          <code>false</code>
+                        </td>
+                        <td>
+                          <code>false</code>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>italic</code>
+                        </td>
+                        <td>
+                          <code>boolean</code>
+                        </td>
+                        <td>
+                          <code>false</code>
+                        </td>
+                        <td>
+                          <code>false</code>
+                        </td>
+                      </tr>
+                    </table>
+                  </Stack>
+                </Stack>
+              </Card>
+
               <Card id="button" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Button</h2>
+                    <Heading level={2}>Button</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The button have a couple of different styles. Default,
                       Primary, Error and Link. It has all the default HTML
                       Button attributes and should be used when a user wants to
                       make any sort of action.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack size="small">
@@ -288,7 +480,7 @@ function Docs() {
                   </Stack>
 
                   <Stack direction="column">
-                    <p>Loading state</p>
+                    <Text>Loading state</Text>
                     <Stack size="small">
                       <Button loading>Default button</Button>
                       <Button loading variant="primary">
@@ -309,10 +501,10 @@ function Docs() {
                     </Stack>
                   </Stack>
 
-                  <p>
+                  <Text>
                     If you supply a <code>block</code> prop the button will span
                     the entire length
-                  </p>
+                  </Text>
 
                   <Stack size="small" direction="column" block>
                     <Button block>Default button</Button>
@@ -345,7 +537,7 @@ function Docs() {
   </Stack>
 
   <Stack direction="column">
-    <p>Loading state</p>
+    <Text>Loading state</Text>
     <Stack size="small">
       <Button loading>Default button</Button>
       <Button loading variant="primary">
@@ -366,10 +558,10 @@ function Docs() {
     </Stack>
   </Stack>
 
-  <p>
+  <Text>
     If you supply a <code>block</code> prop the button will span
     the entire length
-  </p>
+  </Text>
 
   <Stack size="small" direction="column" block>
     <Button block>Default button</Button>
@@ -395,7 +587,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -483,14 +675,14 @@ function Docs() {
               <Card id="popover" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Popover</h2>
+                    <Heading level={2}>Popover</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The popover component is a component to use when you
                       quickly want to display some information or let the user
                       be able to quickly create something without having to go
                       another page.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Popover
@@ -512,7 +704,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -556,14 +748,14 @@ function Docs() {
               <Card id="popconfirm" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>PopConfirm</h2>
+                    <Heading level={2}>PopConfirm</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The popconfirm component is really good if you want to
                       quickly make the user confirm some sort of action. A good
                       example of this is when a user want to delete some entity
                       and you want to confirm their action.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <PopConfirm
@@ -587,7 +779,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -687,14 +879,14 @@ function Docs() {
               <Card id="dropdown" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Dropdown</h2>
+                    <Heading level={2}>Dropdown</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The dropdown component is a component that you can use
                       when you want a user to pick a option from several
                       alternatives. For example this could be useful in a
                       navigation bar when clicking the profile picture.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Dropdown
@@ -742,7 +934,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -788,14 +980,14 @@ function Docs() {
               <Card id="toast" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Toast</h2>
+                    <Heading level={2}>Toast</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The toast component is a component that should be used
                       when you want to quickly display some short information
                       about if a action has succeeded or failed for some reason.
                       It is not the same as a notification.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack size="small">
@@ -839,7 +1031,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -883,15 +1075,15 @@ function Docs() {
               <Card id="modal" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Modal</h2>
+                    <Heading level={2}>Modal</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The modal component is useful if you want the user to be
                       able to fill out some information or choose a action
                       without having to go to another page. Use this if there is
                       too much information for a popover but not enough to have
                       a separate page.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack size="small">
@@ -899,7 +1091,7 @@ function Docs() {
                       onClick={() =>
                         pushModal({
                           title: "Modal",
-                          content: <p>modal content</p>,
+                          content: <Text>modal content</Text>,
                           id: "example-modal",
                         })
                       }
@@ -915,12 +1107,12 @@ function Docs() {
                   {modalOpen && (
                     <Modal onClose={() => setModalOpen(false)}>
                       <Stack direction="column">
-                        <h2>Basic modal</h2>
+                        <Heading level={2}>Basic modal</Heading>
                         <Divider />
-                        <p>
+                        <Text>
                           This is a basic modal component. You can have anything
                           want inside of here
-                        </p>
+                        </Text>
                         <Button
                           style={{ marginTop: "1rem" }}
                           block
@@ -941,7 +1133,7 @@ function Docs() {
       onClick={() =>
         pushModal({
           title: 'Modal',
-          content: <p>modal content</p>,
+          content: <Text>modal content</Text>,
           id: 'example-modal'
         })
       }
@@ -957,12 +1149,12 @@ function Docs() {
   {modalOpen && (
     <Modal onClose={() => setModalOpen(false)}>
       <Stack direction="column">
-        <h2>Basic modal</h2>
+        <Heading level={2}>Basic modal</Heading>
         <Divider />
-        <p>
+        <Text>
           This is a basic modal component. You can have anything
           want inside of here
-        </p>
+        </Text>
         <Button
           style={{ marginTop: "1rem" }}
           block
@@ -979,7 +1171,9 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>Component properties (uncontrolled)</h3>
+                    <Heading level={3}>
+                      Component properties (uncontrolled)
+                    </Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -1033,7 +1227,9 @@ function Docs() {
                   </Stack>
 
                   <Stack direction="column" block>
-                    <h3>Component properties (controlled)</h3>
+                    <Heading level={3}>
+                      Component properties (controlled)
+                    </Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -1077,14 +1273,14 @@ function Docs() {
               <Card id="divider" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Divider</h2>
+                    <Heading level={2}>Divider</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The divider component should be used when you want to
                       separate two components from each other. For example you
                       might want to separate a heading and its subheading or
                       paragraph.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <div style={{ width: "100%" }}>
@@ -1106,7 +1302,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -1136,18 +1332,18 @@ function Docs() {
               <Card id="tooltip" style={{ width: "100%" }}>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Tooltip</h2>
+                    <Heading level={2}>Tooltip</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The tooltip is a component that is very useful if you want
                       to highlight some really basic information to the user at
                       a quick glance. For example, if you have a button with
                       only an icon this might be helpful.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack direction="column">
-                    <p>Hover the icon-button to show the tooltip</p>
+                    <Text>Hover the icon-button to show the tooltip</Text>
 
                     <Tooltip content="Delete this item entirely?">
                       <Button>🗑</Button>
@@ -1165,7 +1361,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" style={{ width: "100%" }}>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -1209,14 +1405,14 @@ function Docs() {
               <Card id="table" style={{ width: "100%" }}>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Table</h2>
+                    <Heading level={2}>Table</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The table component is really useful if you want to
                       display structured data to a user. For example if you have
                       an array of products or customers, this is a good
                       component for displaying something like that.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack direction="column" style={{ width: "100%" }}>
@@ -1296,7 +1492,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" style={{ width: "100%" }}>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -1346,14 +1542,14 @@ function Docs() {
               <Card id="checkbox" style={{ width: "100%" }}>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Checkbox</h2>
+                    <Heading level={2}>Checkbox</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The checkbox component should be used when you want users
                       to agree on some sort of condition. Or for example when
                       you want to add filters for a table, the checkbox is a
                       good component.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Checkbox
@@ -1376,10 +1572,10 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" style={{ width: "100%" }}>
-                    <h3>
+                    <Heading level={3}>
                       Component properties (<i>extends html input attributes</i>
                       )
-                    </h3>
+                    </Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -1409,14 +1605,14 @@ function Docs() {
               <Card id="select" style={{ width: "100%" }}>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Select</h2>
+                    <Heading level={2}>Select</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The checkbox component should be used when you want users
                       to agree on some sort of condition. Or for example when
                       you want to add filters for a table, the checkbox is a
                       good component.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack size="small">
@@ -1489,7 +1685,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" style={{ width: "100%" }}>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -1547,45 +1743,45 @@ function Docs() {
               <Card id="input" style={{ width: "100%" }}>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Input</h2>
+                    <Heading level={2}>Input</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The input component should be used when you want to
                       collect some sort of text information from a user. For
                       example when signing up or logging in and you want them to
                       enter a email and password.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack direction="column">
-                    <p>Default input component</p>
+                    <Text>Default input component</Text>
                     <Input placeholder="Input component..." />
                   </Stack>
 
                   <Stack direction="column">
-                    <p>Input with prefix/icon</p>
+                    <Text>Input with prefix/icon</Text>
                     <Input icon="🔥" placeholder="Input component..." />
                   </Stack>
 
                   <Stack block direction="column">
-                    <p>Full width input</p>
+                    <Text>Full width input</Text>
                     <Input block placeholder="Input component..." />
                   </Stack>
 
                   <div className="code-block">
                     <CopyBlock
                       text={`<Stack direction="column">
-    <p>Default input component</p>
+    <Text>Default input component</Text>
     <Input placeholder="Input component..." />
   </Stack>
 
   <Stack direction="column">
-    <p>Input with prefix/icon</p>
+    <Text>Input with prefix/icon</Text>
     <Input icon="🔥" placeholder="Input component..." />
   </Stack>
 
   <Stack block direction="column">
-    <p>Full width input</p>
+    <Text>Full width input</Text>
     <Input block placeholder="Input component..." />
   </Stack>
   `}
@@ -1595,10 +1791,10 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>
+                    <Heading level={3}>
                       Component properties (<i>extends html input attributes</i>
                       )
-                    </h3>
+                    </Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -1642,14 +1838,14 @@ function Docs() {
               <Card id="autocomplete" style={{ width: "100%" }}>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Autocomplete</h2>
+                    <Heading level={2}>Autocomplete</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The autocomplete component is a really useful component if
                       you want a user to be able to enter some sort of text but
                       also be able to choose between a range of predefined or
                       dynamic options at the same time.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Autocomplete
@@ -1661,7 +1857,7 @@ function Docs() {
                     }
                     searchFields={["name"]}
                     value={autocompleteValue}
-                    renderItem={(item) => <p>{item.name}</p>}
+                    renderItem={(item) => <Text>{item.name}</Text>}
                     onSelectItem={(item) => setAutocompleteValue(item.name)}
                   />
 
@@ -1672,7 +1868,7 @@ function Docs() {
     onChange={(e) => setAutocompleteValue(e.currentTarget.value)}
     onSelectItem={(item) => setAutocompleteValue(item.name)}
     placeholder='Search for a component...'
-    renderItem={(item) => <p>{item.name}</p>}
+    renderItem={(item) => <Text>{item.name}</Text>}
     searchFields={['name']}
     value={autocompleteValue}
   />`}
@@ -1682,13 +1878,13 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>
+                    <Heading level={3}>
                       Component properties (
                       <i>
                         extends <code>Input</code> attributes
                       </i>
                       )
-                    </h3>
+                    </Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -1776,25 +1972,25 @@ function Docs() {
               <Card id="card" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Card</h2>
+                    <Heading level={2}>Card</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The input component should be used when you want to
                       collect some sort of text information from a user. For
                       example when signing up or logging in and you want them to
                       enter a email and password.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack direction="column">
                     <Card>
                       <Stack direction="column">
-                        <h2>Card component</h2>
-                        <p>
+                        <Heading level={2}>Card component</Heading>
+                        <Text>
                           Lorem ipsum dolor sit amet consectetur adipisicing
                           elit. Pariatur voluptatum nemo sed omnis eligendi
                           illum incidunt nostrum excepturi dolorum porro.
-                        </p>
+                        </Text>
                         <Stack size="small">
                           <Button variant="primary">Get started</Button>
                           <Button>See pricing</Button>
@@ -1812,11 +2008,11 @@ function Docs() {
                           textAlign: "center",
                         }}
                       >
-                        <h2>Time for a new project?</h2>
-                        <p style={{ maxWidth: 400 }}>
+                        <Heading level={2}>Time for a new project?</Heading>
+                        <Text style={{ maxWidth: 400 }}>
                           Time to create a new side project? Just hit the button
                           below and we'll get you started in no time.
-                        </p>
+                        </Text>
                         <Button>Create new project?</Button>
                       </Stack>
                     </Card>
@@ -1827,12 +2023,12 @@ function Docs() {
                       text={`<Stack direction="column">
     <Card>
       <Stack direction="column">
-        <h2>Card component</h2>
-        <p>
+        <Heading level={2}>Card component</Heading>
+        <Text>
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Pariatur voluptatum nemo sed omnis eligendi illum
           incidunt nostrum excepturi dolorum porro.
-        </p>
+        </Text>
         <Stack size="small">
           <Button variant="primary">Get started</Button>
           <Button>See pricing</Button>
@@ -1850,11 +2046,11 @@ function Docs() {
           textAlign: "center",
         }}
       >
-        <h2>Time for a new project?</h2>
-        <p style={{ maxWidth: 400 }}>
+        <Heading level={2}>Time for a new project?</Heading>
+        <Text style={{ maxWidth: 400 }}>
           Time to create a new side project? Just hit the button
           below and we'll get you started in no time.
-        </p>
+        </Text>
         <Button>Create new project?</Button>
       </Stack>
     </Card>
@@ -1865,10 +2061,10 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>
+                    <Heading level={3}>
                       Component properties (<i>extends html input attributes</i>
                       )
-                    </h3>
+                    </Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -1926,14 +2122,14 @@ function Docs() {
               <Card id="avatar" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Avatar</h2>
+                    <Heading level={2}>Avatar</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The avatar is a component that is really useful when you
                       want to display some sort of a profile picture or logo.
                       Just be aware that only square logos with only a icon will
                       look good on the avatar component.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack>
@@ -1968,7 +2164,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -2025,14 +2221,14 @@ function Docs() {
               <Card id="tag" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Tag</h2>
+                    <Heading level={2}>Tag</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The tag components i a useful component to use if you want
                       to list an array of short info points. For example in a
                       instagram post the user might have entered a handful
                       hashtags and you want to display them.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack size="small">
@@ -2058,7 +2254,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -2089,14 +2285,14 @@ function Docs() {
               <Card id="grid" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Grid</h2>
+                    <Heading level={2}>Grid</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The grid component is quite useful if you want build some
                       sort of layout that has several columns perhaps different
                       sized rows. It can also be helpful if you want several
                       columns to turn into one column on a small screen.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Grid gap="1rem" columns="repeat(2, 1fr)" rows="1fr 2fr 1fr">
@@ -2124,7 +2320,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -2182,18 +2378,18 @@ function Docs() {
               <Card id="stack" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Stack</h2>
+                    <Heading level={2}>Stack</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The stack component is what mostly replaces flex and
                       margins. This lets you wrap several elements and decide
                       which direction it should list the elements, as well as
                       how much spacing should be added between each element.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack direction="column">
-                    <p>Horizontal (default) stack</p>
+                    <Text>Horizontal (default) stack</Text>
                     <Stack>
                       <Button>Button 1</Button>
                       <Button>Button 2</Button>
@@ -2202,9 +2398,9 @@ function Docs() {
                   </Stack>
 
                   <Stack direction="column" block>
-                    <p>
+                    <Text>
                       Horizontal stack (<code>block</code>)
-                    </p>
+                    </Text>
                     <Stack block>
                       <Button block>Button 1</Button>
                       <Button block>Button 2</Button>
@@ -2213,7 +2409,7 @@ function Docs() {
                   </Stack>
 
                   <Stack direction="column">
-                    <p>Vertical stack</p>
+                    <Text>Vertical stack</Text>
                     <Stack direction="column">
                       <Button>Button 1</Button>
                       <Button>Button 2</Button>
@@ -2222,9 +2418,9 @@ function Docs() {
                   </Stack>
 
                   <Stack direction="column" block>
-                    <p>
+                    <Text>
                       Vertical stack (<code>block</code>)
-                    </p>
+                    </Text>
                     <Stack direction="column" block>
                       <Button block>Button 1</Button>
                       <Button block>Button 2</Button>
@@ -2235,7 +2431,7 @@ function Docs() {
                   <div className="code-block">
                     <CopyBlock
                       text={`<Stack direction="column">
-    <p>Horizontal (default) stack</p>
+    <Text>Horizontal (default) stack</Text>
     <Stack>
       <Button>Button 1</Button>
       <Button>Button 2</Button>
@@ -2244,7 +2440,7 @@ function Docs() {
   </Stack>
 
   <Stack direction="column" block>
-    <p>Horizontal stack (<code>block</code>)</p>
+    <Text>Horizontal stack (<code>block</code>)</Text>
     <Stack block>
       <Button block>Button 1</Button>
       <Button block>Button 2</Button>
@@ -2253,7 +2449,7 @@ function Docs() {
   </Stack>
 
   <Stack direction="column">
-    <p>Vertical stack</p>
+    <Text>Vertical stack</Text>
     <Stack direction="column">
       <Button>Button 1</Button>
       <Button>Button 2</Button>
@@ -2262,7 +2458,7 @@ function Docs() {
   </Stack>
 
   <Stack direction="column" block>
-    <p>Vertical stack (<code>block</code>)</p>
+    <Text>Vertical stack (<code>block</code>)</Text>
     <Stack direction="column" block>
       <Button block>Button 1</Button>
       <Button block>Button 2</Button>
@@ -2275,7 +2471,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -2333,25 +2529,25 @@ function Docs() {
               <Card id="progress" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Progress</h2>
+                    <Heading level={2}>Progress</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The progress component is really useful if you want to
                       display for the user the progress they or some other
                       entity has made over a period of time. For example the
                       progress on a course or the downloading of a file.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack direction="column" block>
-                    <p>Default progress bars</p>
+                    <Text>Default progress bars</Text>
                     <Progress />
                     <Progress value={0.5} />
                     <Progress value={1} />
                   </Stack>
 
                   <Stack direction="column" block>
-                    <p>With labels</p>
+                    <Text>With labels</Text>
                     <Progress showLabel />
                     <Progress showLabel value={0.5} />
                     <Progress showLabel value={1} />
@@ -2360,14 +2556,14 @@ function Docs() {
                   <div className="code-block">
                     <CopyBlock
                       text={`<Stack direction="column" block>
-    <p>Default progress bars</p>
+    <Text>Default progress bars</Text>
     <Progress />
     <Progress value={0.5} />
     <Progress value={1} />
   </Stack>
 
   <Stack direction="column" block>
-    <p>With labels</p>
+    <Text>With labels</Text>
     <Progress showLabel />
     <Progress showLabel value={0.5} />
     <Progress showLabel value={1} />
@@ -2378,7 +2574,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -2436,14 +2632,14 @@ function Docs() {
               <Card id="spinner" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Spinner</h2>
+                    <Heading level={2}>Spinner</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The spinner component is a really good component when you
                       want to indicate that some sort of process is in a loading
                       state. For example when you are loading data onto a page
                       or loading the entire page.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack>
@@ -2479,7 +2675,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -2525,14 +2721,14 @@ function Docs() {
               <Card id="notification" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Notification</h2>
+                    <Heading level={2}>Notification</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The notification utility is good if you want to deliver
                       some sort of important message to the user. For example an
                       error that occurs after some sort of user action, or a
                       more complex success message.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack size="small">
@@ -2711,7 +2907,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -2813,14 +3009,14 @@ function Docs() {
               <Card id="message" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Message</h2>
+                    <Heading level={2}>Message</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The message utility is good if you want to deliver some
                       sort of important message to the user. For example an
                       error that occurs after some sort of user action, or a
                       less complex success message.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack size="small">
@@ -2957,7 +3153,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -3031,15 +3227,15 @@ function Docs() {
               <Card id="badge" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>Badge</h2>
+                    <Heading level={2}>Badge</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The badge component is a good component if you want to
                       highlight some sort of activity on a page that the user is
                       not currently on. For example you might have a messages
                       page, and in your header you could have a link to the page
                       where you want to show the amount of new messages.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack>
@@ -3073,7 +3269,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>
@@ -3189,19 +3385,19 @@ function Docs() {
               <Card id="list" block>
                 <Stack direction="column" size="large">
                   <Stack direction="column" size="small">
-                    <h2>List</h2>
+                    <Heading level={2}>List</Heading>
                     <Divider spacing="medium" />
-                    <p style={{ maxWidth: "80ch" }}>
+                    <Text style={{ maxWidth: "80ch" }}>
                       The list component is really useful if you want to list to
                       the user a smaller amount of short noted information. For
                       example a list of features or functionalities of a product
                       or similar.
-                    </p>
+                    </Text>
                   </Stack>
 
                   <Stack size="large" direction="column">
                     <Stack direction="column">
-                      <p>Default list component</p>
+                      <Text>Default list component</Text>
                       <List
                         items={[
                           {
@@ -3221,7 +3417,7 @@ function Docs() {
                     </Stack>
 
                     <Stack direction="column">
-                      <p>Ordered list component</p>
+                      <Text>Ordered list component</Text>
                       <List
                         ordered
                         items={[
@@ -3246,7 +3442,7 @@ function Docs() {
                     <CopyBlock
                       text={`<Stack size="large" direction="column">
     <Stack direction="column">
-      <p>Default list component</p>
+      <Text>Default list component</Text>
       <List
         items={[
           {
@@ -3266,7 +3462,7 @@ function Docs() {
     </Stack>
 
     <Stack direction="column">
-      <p>Ordered list component</p>
+      <Text>Ordered list component</Text>
       <List
         ordered
         items={[
@@ -3292,7 +3488,7 @@ function Docs() {
                   </div>
 
                   <Stack direction="column" block>
-                    <h3>Component properties</h3>
+                    <Heading level={3}>Component properties</Heading>
                     <table className="table">
                       <tr>
                         <th>Name</th>

@@ -23,14 +23,20 @@ const Sidebar = () => {
           <HashLink to="/documentation#getting-started">
             <li>Getting started</li>
           </HashLink>
+          <HashLink to="/documentation#typography">
+            <li>Typography</li>
+          </HashLink>
         </div>
         {Object.keys(groupedComponents)
           .sort((category) => groupedComponents[category].length)
           .map((category) => (
-            <div>
+            <div key={category}>
               <h4>{category}</h4>
               {groupedComponents[category].map((component) => (
-                <HashLink to={`/documentation#${kebabCase(component.name)}`}>
+                <HashLink
+                  key={component.name}
+                  to={`/documentation#${kebabCase(component.name)}`}
+                >
                   <li>{component.name}</li>
                 </HashLink>
               ))}
