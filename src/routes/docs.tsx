@@ -100,14 +100,6 @@ function Docs() {
           size="large"
           className="documentation-content"
         >
-          <iframe
-            src="https://github.com/sponsors/albingroen/card"
-            title="Sponsor albingroen"
-            height="200"
-            width="600"
-            style={{ border: "none" }}
-          />
-
           <header style={{ width: "100%" }}>
             <Stack block direction="column" size="large">
               <a href="/">
