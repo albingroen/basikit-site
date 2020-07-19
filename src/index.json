@@ -30,6 +30,11 @@
     "category": "input"
   },
   {
+    "name": "Switch",
+    "description": "The switch component should be used when you want users to toggle on some sort of feature. One good point to go by is that something should usually happen after toggling a switch component.",
+    "category": "input"
+  },
+  {
     "name": "Divider",
     "description": "The divider component should be used when you want to separate two components from each other. For example you might want to separate a heading and its subheading or paragraph.",
     "category": "other"

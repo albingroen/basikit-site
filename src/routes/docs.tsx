@@ -20,6 +20,7 @@ import {
   Select,
   Spinner,
   Stack,
+  Switch,
   Table,
   Tag,
   Toast,
@@ -1605,6 +1606,82 @@ function Docs() {
                         </td>
                         <td>
                           <code>undefined</code>
+                        </td>
+                      </tr>
+                    </table>
+                  </Stack>
+                </Stack>
+              </Card>
+
+              <Card id="switch" style={{ width: "100%" }}>
+                <Stack direction="column" size="large">
+                  <Stack direction="column" size="small">
+                    <Heading level={2}>Switch</Heading>
+                    <Divider spacing="medium" />
+                    <Text style={{ maxWidth: "80ch" }}>
+                      The switch component should be used when you want users to
+                      toggle on some sort of feature. One good point to go by is
+                      that something should usually happen after toggling a
+                      switch component.
+                    </Text>
+                  </Stack>
+
+                  <Switch
+                    label="Turn on mobile data"
+                    onChange={(e) => setChecked(e.currentTarget.checked)}
+                    checked={checked}
+                  />
+
+                  <div className="code-block">
+                    <CopyBlock
+                      text={`<Switch
+  label="Turn on mobile data"
+  onChange={(e) => setChecked(e.currentTarget.checked)}
+  checked={checked}
+/>`}
+                      language="jsx"
+                      theme={nord}
+                    />
+                  </div>
+
+                  <Stack direction="column" style={{ width: "100%" }}>
+                    <Heading level={3}>
+                      Component properties (<i>extends html input attributes</i>
+                      )
+                    </Heading>
+                    <table className="table">
+                      <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Required</th>
+                        <th>Default</th>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>label</code>
+                        </td>
+                        <td>
+                          <code>string</code>
+                        </td>
+                        <td>
+                          <code>false</code>
+                        </td>
+                        <td>
+                          <code>undefined</code>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <code>variant</code>
+                        </td>
+                        <td>
+                          <code>'default' | 'success' | 'error'</code>
+                        </td>
+                        <td>
+                          <code>false</code>
+                        </td>
+                        <td>
+                          <code>'default'</code>
                         </td>
                       </tr>
                     </table>
