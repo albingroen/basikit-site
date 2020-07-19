@@ -46,6 +46,7 @@ function Docs() {
   const [modalOpen, setModalOpen] = React.useState<boolean>(false);
   const [selectValue, setSelectValue] = React.useState<string>();
   const [toastErrorOpen, setToastErrorOpen] = React.useState<boolean>(false);
+  const [isSkeletonOn, setIsSkeletonOn] = React.useState<boolean>(false);
   const [toastOpen, setToastOpen] = React.useState<boolean>(false);
   const [toastSuccessOpen, setToastSuccessOpen] = React.useState<boolean>(
     false
@@ -3614,6 +3615,116 @@ function Docs() {
                         </td>
                       </tr>
                     </table>
+                  </Stack>
+                </Stack>
+              </Card>
+
+              <Card id="skeleton" block>
+                <Stack direction="column" size="large">
+                  <Stack direction="column" size="small">
+                    <Heading level={2}>Skeleton</Heading>
+                    <Divider spacing="medium" />
+                    <Text style={{ maxWidth: "80ch" }}>
+                      The functionality of rendering a skeleton works a little
+                      bit different to most other component libraries. In
+                      Basikit, how it works is that you choose what component
+                      you want to use and then just pass it a skeleton prop.
+                    </Text>
+                  </Stack>
+
+                  <Switch
+                    checked={isSkeletonOn}
+                    onChange={(e) => setIsSkeletonOn(e.currentTarget.checked)}
+                    label="Enable skeleton layout?"
+                  />
+
+                  <Stack direction="column">
+                    <Card skeleton={isSkeletonOn}>
+                      <Heading level={2}>Card title</Heading>
+                      <Divider spacing="small" />
+                      <Text>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Labore, a rerum velit dolorum pariatur aliquam
+                        magnam, earum, in ad quis provident quidem fugiat id eos
+                        fugit sed dolorem architecto laudantium!
+                      </Text>
+                    </Card>
+                    <Heading skeleton={isSkeletonOn}>
+                      This is a basic heading
+                    </Heading>
+                    <Button variant="primary" skeleton={isSkeletonOn}>
+                      Click me please
+                    </Button>
+                    <Avatar
+                      src="https://i.pravatar.cc/5"
+                      skeleton={isSkeletonOn}
+                    />
+                    <Tag variant="primary" skeleton={isSkeletonOn}>
+                      Javascript
+                    </Tag>
+                  </Stack>
+
+                  <div className="code-block">
+                    <CopyBlock
+                      text={`<Switch
+  checked={isSkeletonOn}
+  onChange={(e) => setIsSkeletonOn(e.currentTarget.checked)}
+  label="Enable skeleton layout?"
+/>
+
+<Stack direction="column">
+  <Card skeleton={isSkeletonOn}>
+    <Heading level={2}>Card title</Heading>
+    <Divider spacing="small" />
+    <Text>
+      Lorem ipsum, dolor sit amet consectetur adipisicing
+      elit. Labore, a rerum velit dolorum pariatur aliquam
+      magnam, earum, in ad quis provident quidem fugiat id eos
+      fugit sed dolorem architecto laudantium!
+    </Text>
+  </Card>
+  <Heading skeleton={isSkeletonOn}>
+    This is a basic heading
+  </Heading>
+  <Button variant="primary" skeleton={isSkeletonOn}>
+    Click me please
+  </Button>
+  <Avatar src="https://i.pravatar.cc/5" skeleton={isSkeletonOn} />
+  <Tag variant="primary" skeleton={isSkeletonOn}>
+    Javascript
+  </Tag>
+</Stack>`}
+                      language="jsx"
+                      theme={nord}
+                    />
+                  </div>
+
+                  <Stack direction="column">
+                    <Heading level={3}>These components support the skeleton prop</Heading>
+                    <List
+                      items={[
+                        {
+                          key: 0,
+                          title: 'Card'
+                        },
+                        {
+                          key: 1,
+                          title: 'Heading'
+                        },
+                        {
+                          key: 2,
+                          title: 'Button'
+                        },
+                        {
+                          key: 3,
+                          title: 'Avatar'
+                        },
+                        {
+                          key: 4,
+                          title: 'Tag'
+                        },
+                      ]}
+                    />
                   </Stack>
                 </Stack>
               </Card>
