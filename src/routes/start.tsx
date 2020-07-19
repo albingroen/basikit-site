@@ -1,9 +1,9 @@
 import React from "react";
-import { Button, Stack, Tooltip, useMessage } from "basikit";
-import { logoWhite } from "../lib";
 import CopyToClipboard from "react-copy-to-clipboard";
+import { Button, Stack, Tooltip, useMessage } from "basikit";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
+import { logoWhite } from "../lib";
 
 const Start = () => {
   const { pushMessage } = useMessage();
