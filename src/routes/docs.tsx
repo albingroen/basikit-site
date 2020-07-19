@@ -115,7 +115,7 @@ function Docs() {
                     <span role="img" aria-label="emoji">
                       📚
                     </span>{" "}
-                    Yet another React.js ui-kit
+                    Beautiful and accessible React components
                   </Text>
                 </Stack>
 
