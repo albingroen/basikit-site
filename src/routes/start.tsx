@@ -1,8 +1,6 @@
 import React from "react";
 import { Button, Stack, Tooltip, useMessage } from "basikit";
 import { logoWhite } from "../lib";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faCode } from "@fortawesome/free-solid-svg-icons";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
@@ -37,22 +35,12 @@ const Start = () => {
             <Stack>
               <HashLink to="/documentation#installing-package">
                 <Button size="large" variant="success">
-                  <Stack block align="center" size="small">
-                    <span>Install now</span>
-                    <i>
-                      <FontAwesomeIcon icon={faArrowRight} />
-                    </i>
-                  </Stack>
+                   Install now
                 </Button>
               </HashLink>
               <Link to="/documentation">
                 <Button id="documentation-button" size="large">
-                  <Stack block align="center" size="small">
-                    <span>Documentation</span>
-                    <i>
-                      <FontAwesomeIcon icon={faCode} />
-                    </i>
-                  </Stack>
+                  Documentation
                 </Button>
               </Link>
             </Stack>
