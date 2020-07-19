@@ -486,7 +486,7 @@ function Docs() {
                     <Button variant="primary">Primary button</Button>
                     <Button variant="success">Success button</Button>
                     <Button variant="error">Error button</Button>
-                    <Button bordered>Bordered button</Button>
+                    <Button dashed>Dashed button</Button>
                     <Button variant="link">Link button</Button>
                   </Stack>
 
@@ -503,8 +503,8 @@ function Docs() {
                       <Button loading variant="error">
                         Error button
                       </Button>
-                      <Button loading bordered>
-                        Bordered button
+                      <Button loading dashed>
+                        Dashed button
                       </Button>
                       <Button loading variant="link">
                         Link button
@@ -528,8 +528,8 @@ function Docs() {
                     <Button block variant="error">
                       Error button
                     </Button>
-                    <Button block bordered>
-                      Bordered button
+                    <Button block dashed>
+                      Dashed button
                     </Button>
                     <Button block variant="link">
                       Link button
@@ -543,7 +543,7 @@ function Docs() {
     <Button variant="primary">Primary button</Button>
     <Button variant="success">Success button</Button>
     <Button variant="error">Error button</Button>
-    <Button bordered>Bordered button</Button>
+    <Button dashed>Dashed button</Button>
     <Button variant="link">Link button</Button>
   </Stack>
 
@@ -560,8 +560,8 @@ function Docs() {
       <Button loading variant="error">
         Error button
       </Button>
-      <Button loading bordered>
-        Bordered button
+      <Button loading dashed>
+        Dashed button
       </Button>
       <Button loading variant="link">
         Link button
@@ -585,8 +585,8 @@ function Docs() {
     <Button block variant="error">
       Error button
     </Button>
-    <Button block bordered>
-      Bordered button
+    <Button block dashed>
+      Dashed button
     </Button>
     <Button block variant="link">
       Link button
@@ -2085,7 +2085,7 @@ function Docs() {
                       </Stack>
                     </Card>
 
-                    <Card block bordered style={{ borderColor: "#ccc" }}>
+                    <Card block dashed style={{ borderColor: "#ccc" }}>
                       <Stack
                         direction="column"
                         style={{
@@ -2123,7 +2123,7 @@ function Docs() {
       </Stack>
     </Card>
 
-    <Card block bordered style={{ borderColor: "#ccc" }}>
+    <Card block dashed style={{ borderColor: "#ccc" }}>
       <Stack
         direction="column"
         style={{
