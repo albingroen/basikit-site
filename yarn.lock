@@ -2862,10 +2862,10 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-basikit@^1.4.5:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/basikit/-/basikit-1.4.5.tgz#6cd8af157199ec1a484e7fc5cfe973c0a9aa4b4e"
-  integrity sha512-F8pKnWJYdhcANKlVV89YmL2zpSCxy4qS8SuqHI5cgbLlnz0R+ns6WpvT++CdTPvZrr2aniOIft57QuIkRm76vQ==
+basikit@^1.4.7:
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/basikit/-/basikit-1.4.7.tgz#1ce5d32a11ff4aa5131c334f56f55875f29d0126"
+  integrity sha512-fKYU6SOEhLdHw7lJze+uUPQiO187j0Iri2z4jHnSsiRLuY7YBdiLea04H9KV9f7OedxouQh9+Vkp08P69sr2Lw==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.30"
     "@fortawesome/free-solid-svg-icons" "^5.14.0"

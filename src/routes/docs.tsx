@@ -322,6 +322,11 @@ function Docs() {
                     <Text italic>The following conditions do apply*</Text>
                   </Stack>
 
+                  <Stack direction="column">
+                    <Text>Code Text:</Text>
+                    <Text code>yarn add basikit</Text>
+                  </Stack>
+
                   <div className="code-block">
                     <CopyBlock
                       text={`const { Heading, Text } = Typography
@@ -364,6 +369,11 @@ function Docs() {
 <Stack direction="column">
   <Text>Italic Text:</Text>
   <Text italic>The following conditions do apply*</Text>
+</Stack>
+
+<Stack direction="column">
+  <Text>Code Text:</Text>
+  <Text code>yarn add basikit</Text>
 </Stack>`}
                       language="jsx"
                       theme={nord}
