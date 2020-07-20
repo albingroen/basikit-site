@@ -3671,6 +3671,24 @@ function Docs() {
                     <Tag variant="primary" skeleton={isSkeletonOn}>
                       Javascript
                     </Tag>
+                    <Input
+                      type="password"
+                      placeholder="Enter a solid password..."
+                      skeleton={isSkeletonOn}
+                    />
+                    <Autocomplete
+                      blurOnSelect
+                      skeleton={isSkeletonOn}
+                      placeholder="Search for a component..."
+                      items={componentIndex}
+                      onChange={(e) =>
+                        setAutocompleteValue(e.currentTarget.value)
+                      }
+                      searchFields={["name"]}
+                      value={autocompleteValue}
+                      renderItem={(item) => <Text>{item.name}</Text>}
+                      onSelectItem={(item) => setAutocompleteValue(item.name)}
+                    />
                   </Stack>
 
                   <div className="code-block">
@@ -3717,6 +3735,26 @@ function Docs() {
   <Tag variant="primary" skeleton={isSkeletonOn}>
     Javascript
   </Tag>
+
+  <Input
+    type="password"
+    placeholder="Enter a solid password..."
+    skeleton={isSkeletonOn}
+  />
+
+  <Autocomplete
+    blurOnSelect
+    skeleton={isSkeletonOn}
+    placeholder="Search for a component..."
+    items={componentIndex}
+    onChange={(e) =>
+      setAutocompleteValue(e.currentTarget.value)
+    }
+    searchFields={["name"]}
+    value={autocompleteValue}
+    renderItem={(item) => <Text>{item.name}</Text>}
+    onSelectItem={(item) => setAutocompleteValue(item.name)}
+  />
 </Stack>`}
                       language="jsx"
                       theme={nord}
@@ -3756,6 +3794,14 @@ function Docs() {
                         {
                           key: 6,
                           title: "Select",
+                        },
+                        {
+                          key: 7,
+                          title: "Input",
+                        },
+                        {
+                          key: 8,
+                          title: "Autocomplete",
                         },
                       ]}
                     />
