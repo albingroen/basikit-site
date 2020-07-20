@@ -35,7 +35,7 @@ const Start = () => {
             <Stack>
               <HashLink to="/documentation#installing-package">
                 <Button size="large" variant="success">
-                   Install now
+                  Install now
                 </Button>
               </HashLink>
               <Link to="/documentation">

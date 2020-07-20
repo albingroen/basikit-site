@@ -3652,12 +3652,21 @@ function Docs() {
                     <Heading skeleton={isSkeletonOn}>
                       This is a basic heading
                     </Heading>
+                    <Text skeleton={isSkeletonOn}>
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Doloremque, dolore?
+                    </Text>
                     <Button variant="primary" skeleton={isSkeletonOn}>
                       Click me please
                     </Button>
                     <Avatar
                       src="https://i.pravatar.cc/5"
                       skeleton={isSkeletonOn}
+                    />
+                    <Select
+                      skeleton={isSkeletonOn}
+                      onChange={() => {}}
+                      items={[{ value: "item1", title: "Item 1" }]}
                     />
                     <Tag variant="primary" skeleton={isSkeletonOn}>
                       Javascript
@@ -3683,13 +3692,28 @@ function Docs() {
       fugit sed dolorem architecto laudantium!
     </Text>
   </Card>
+
   <Heading skeleton={isSkeletonOn}>
     This is a basic heading
   </Heading>
+
+  <Text skeleton={isSkeletonOn}>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+    Doloremque, dolore?
+  </Text>
+
   <Button variant="primary" skeleton={isSkeletonOn}>
     Click me please
   </Button>
+
   <Avatar src="https://i.pravatar.cc/5" skeleton={isSkeletonOn} />
+
+  <Select
+    skeleton={isSkeletonOn}
+    onChange={() => {}}
+    items={[{ value: "item1", title: "Item 1" }]}
+  />
+
   <Tag variant="primary" skeleton={isSkeletonOn}>
     Javascript
   </Tag>
@@ -3700,28 +3724,38 @@ function Docs() {
                   </div>
 
                   <Stack direction="column">
-                    <Heading level={3}>These components support the skeleton prop</Heading>
+                    <Heading level={3}>
+                      These components support the skeleton prop
+                    </Heading>
                     <List
                       items={[
                         {
                           key: 0,
-                          title: 'Card'
+                          title: "Card",
                         },
                         {
                           key: 1,
-                          title: 'Heading'
+                          title: "Heading",
                         },
                         {
                           key: 2,
-                          title: 'Button'
+                          title: "Text",
                         },
                         {
                           key: 3,
-                          title: 'Avatar'
+                          title: "Button",
                         },
                         {
                           key: 4,
-                          title: 'Tag'
+                          title: "Avatar",
+                        },
+                        {
+                          key: 5,
+                          title: "Tag",
+                        },
+                        {
+                          key: 6,
+                          title: "Select",
                         },
                       ]}
                     />
