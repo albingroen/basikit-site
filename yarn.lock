@@ -2855,15 +2855,16 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-basikit@^1.5.5:
-  version "1.5.5"
-  resolved "https://registry.yarnpkg.com/basikit/-/basikit-1.5.5.tgz#8515e9f2ec05ac3954ea2c2a0e430f34e9e4eedd"
-  integrity sha512-yY7w91dEm1HOFG0vdFvpHjhaGr5zSLYGycDk2k25Rm75SHZd/kmmD34G/xLx5FbMfvP9rbkEak/AuveTUZSatA==
+basikit@^1.5.7:
+  version "1.5.7"
+  resolved "https://registry.yarnpkg.com/basikit/-/basikit-1.5.7.tgz#9ba3d1d5c6667300ce151cfdff8b7591e84b6276"
+  integrity sha512-OFOhLzf1TK2CsblrNN0j0s/75V9QGstEXwDnvCPgZORHIWfNyS71uhlbtT7ZxeD8M+4lIMRP/7Bg0H33R/V+0Q==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.30"
     "@fortawesome/free-solid-svg-icons" "^5.14.0"
     "@fortawesome/react-fontawesome" "^0.1.11"
     dot-prop "^5.2.0"
+    react-outside-click-handler "^1.3.0"
 
 batch@0.6.1:
   version "0.6.1"
@@ -9680,7 +9681,7 @@ react-is@^16.12.0, react-is@^16.13.1, react-is@^16.6.0, react-is@^16.7.0, react-
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-outside-click-handler@1.x:
+react-outside-click-handler@1.x, react-outside-click-handler@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/react-outside-click-handler/-/react-outside-click-handler-1.3.0.tgz#3831d541ac059deecd38ec5423f81e80ad60e115"
   integrity sha512-Te/7zFU0oHpAnctl//pP3hEAeobfeHMyygHB8MnjP6sX5OR8KHT1G3jmLsV3U9RnIYo+Yn+peJYWu+D5tUS8qQ==

@@ -25,6 +25,11 @@
     "category": "display"
   },
   {
+    "name": "Drawer",
+    "description": "The drawer component is good if you want to open some sort of new context that's somehow relative to the content on the current page but deserves its own attention and not always be visible on the page.",
+    "category": "display"
+  },
+  {
     "name": "Checkbox",
     "description": "The checkbox component should be used when you want users to agree on some sort of condition. Or for example when you want to add filters for a table, the checkbox is a good component.",
     "category": "input"

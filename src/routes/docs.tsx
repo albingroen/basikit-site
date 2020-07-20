@@ -8,6 +8,7 @@ import {
   Button,
   Card,
   Checkbox,
+  Drawer,
   Divider,
   Dropdown,
   Grid,
@@ -42,6 +43,7 @@ function Docs() {
   const { pushMessage } = useMessage();
   const { pushModal } = useModal();
 
+  const [drawer, setDrawer] = React.useState<boolean>(false);
   const [autocompleteValue, setAutocompleteValue] = React.useState<string>();
   const [checked, setChecked] = React.useState<boolean>(false);
   const [modalOpen, setModalOpen] = React.useState<boolean>(false);
@@ -3933,6 +3935,165 @@ function Docs() {
                           {
                             key: 3,
                             value: "false",
+                          },
+                        ],
+                      ]}
+                    />
+                  </Stack>
+                </Stack>
+              </Card>
+              <Card id="drawer" block>
+                <Stack direction="column" size="large">
+                  <Stack direction="column" size="small">
+                    <Heading level={2}>Drawer</Heading>
+                    <Divider spacing="medium" />
+                    <Text style={{ maxWidth: "80ch" }}>
+                      The drawer component is good if you want to open some sort
+                      of new context that's somehow relative to the content on
+                      the current page but deserves its own attention and not
+                      always be visible on the page.
+                    </Text>
+                  </Stack>
+
+                  <Button onClick={() => setDrawer(true)}>Open drawer</Button>
+
+                  {drawer && (
+                    <Drawer
+                      title="Drawer title"
+                      onClose={() => setDrawer(false)}
+                    >
+                      <Text>This is the content of the drawer.</Text>
+                    </Drawer>
+                  )}
+
+                  <div className="code-block">
+                    <CopyBlock
+                      text={`<Button onClick={() => setIsDrawerOpen(true)}>Open drawer</Button>
+
+{isDrawerOpen && (
+  <Drawer
+    title="Search a user"
+    onClose={() => setDrawer(false)}
+  >
+    <Text>This is the content of the drawer.</Text>
+  </Drawer>
+)}`}
+                      language="jsx"
+                      theme={nord}
+                    />
+                  </div>
+
+                  <Stack direction="column" block>
+                    <Heading level={3}>Component properties</Heading>
+
+                    <Table
+                      columns={[
+                        {
+                          key: 0,
+                          title: "Name",
+                        },
+                        {
+                          key: 1,
+                          title: "Type",
+                        },
+                        {
+                          key: 2,
+                          title: "Required",
+                        },
+                        {
+                          key: 3,
+                          title: "Default",
+                        },
+                      ]}
+                      rows={[
+                        [
+                          {
+                            key: 0,
+                            value: "position",
+                          },
+                          {
+                            key: 1,
+                            value: "'right' | 'left'",
+                          },
+                          {
+                            key: 2,
+                            value: "false",
+                          },
+                          {
+                            key: 3,
+                            value: "right",
+                          },
+                        ],
+                        [
+                          {
+                            key: 0,
+                            value: "onclose",
+                          },
+                          {
+                            key: 1,
+                            value: "() => void",
+                          },
+                          {
+                            key: 2,
+                            value: "false",
+                          },
+                          {
+                            key: 3,
+                            value: "undefined",
+                          },
+                        ],
+                        [
+                          {
+                            key: 0,
+                            value: "title",
+                          },
+                          {
+                            key: 1,
+                            value: "string",
+                          },
+                          {
+                            key: 2,
+                            value: "false",
+                          },
+                          {
+                            key: 3,
+                            value: "undefined",
+                          },
+                        ],
+                        [
+                          {
+                            key: 0,
+                            value: "width",
+                          },
+                          {
+                            key: 1,
+                            value: "number",
+                          },
+                          {
+                            key: 2,
+                            value: "false",
+                          },
+                          {
+                            key: 3,
+                            value: "300",
+                          },
+                        ],
+                        [
+                          {
+                            key: 0,
+                            value: "children",
+                          },
+                          {
+                            key: 1,
+                            value: "React.ReactNode",
+                          },
+                          {
+                            key: 2,
+                            value: "false",
+                          },
+                          {
+                            key: 3,
+                            value: "undefined",
                           },
                         ],
                       ]}
