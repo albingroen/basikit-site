@@ -128,5 +128,10 @@
     "name": "Skeleton",
     "description": "The functionality of rendering a skeleton works a little bit different to most other component libraries. In Basikit, how it works is that you choose what component you want to use and then just pass it a skeleton prop.",
     "category": "other"
+  },
+  {
+    "name": "Rating",
+    "description": "The rating component is useful if you want the user to rate something in your application. For example a restaurant they went to, or maybe the general experience on your app.",
+    "category": "other"
   }
 ]

@@ -29,6 +29,7 @@ import {
   useMessage,
   useNotification,
   useModal,
+  Rating,
 } from "basikit";
 import { logo } from "../lib";
 import Sidebar from "../components/sidebar";
@@ -48,6 +49,7 @@ function Docs() {
   const [toastErrorOpen, setToastErrorOpen] = React.useState<boolean>(false);
   const [isSkeletonOn, setIsSkeletonOn] = React.useState<boolean>(false);
   const [toastOpen, setToastOpen] = React.useState<boolean>(false);
+  const [rating, setRating] = React.useState<0 | 1 | 2 | 3 | 4 | 5>(3);
   const [toastSuccessOpen, setToastSuccessOpen] = React.useState<boolean>(
     false
   );
@@ -3803,6 +3805,136 @@ function Docs() {
                           key: 8,
                           title: "Autocomplete",
                         },
+                      ]}
+                    />
+                  </Stack>
+                </Stack>
+              </Card>
+
+              <Card id="rating" block>
+                <Stack direction="column" size="large">
+                  <Stack direction="column" size="small">
+                    <Heading level={2}>Rating</Heading>
+                    <Divider spacing="medium" />
+                    <Text style={{ maxWidth: "80ch" }}>
+                      The rating component is useful if you want the user to
+                      rate something in your application. For example a
+                      restaurant they went to, or maybe the general experience
+                      on your app.
+                    </Text>
+                  </Stack>
+
+                  <Stack direction="column">
+                    <Text>Default</Text>
+                    <Rating />
+                  </Stack>
+                  <Stack direction="column">
+                    <Text>Controlled</Text>
+                    <Rating onChangeRating={setRating} rating={rating} />
+                  </Stack>
+                  <Stack direction="column">
+                    <Text>Read only</Text>
+                    <Rating readOnly rating={4} />
+                  </Stack>
+
+                  <div className="code-block">
+                    <CopyBlock
+                      text={`<Stack direction="column">
+  <Text>Default</Text>
+  <Rating />
+</Stack>
+
+<Stack direction="column">
+  <Text>Controlled</Text>
+  <Rating onChangeRating={setRating} rating={rating} />
+</Stack>
+
+<Stack direction="column">
+  <Text>Read only</Text>
+  <Rating readOnly rating={4} />
+</Stack>`}
+                      language="jsx"
+                      theme={nord}
+                    />
+                  </div>
+
+                  <Stack direction="column" block>
+                    <Heading level={3}>Component properties</Heading>
+
+                    <Table
+                      columns={[
+                        {
+                          key: 0,
+                          title: "Name",
+                        },
+                        {
+                          key: 1,
+                          title: "Type",
+                        },
+                        {
+                          key: 2,
+                          title: "Required",
+                        },
+                        {
+                          key: 3,
+                          title: "Default",
+                        },
+                      ]}
+                      rows={[
+                        [
+                          {
+                            key: 0,
+                            value: "rating",
+                          },
+                          {
+                            key: 1,
+                            value: "0 | 1 | 2 | 3 | 4 | 5",
+                          },
+                          {
+                            key: 2,
+                            value: "false",
+                          },
+                          {
+                            key: 3,
+                            value: "0",
+                          },
+                        ],
+                        [
+                          {
+                            key: 0,
+                            value: "onChangeRating",
+                          },
+                          {
+                            key: 1,
+                            value: "(value: 0 | 1 | 2 | 3 | 4 | 5) => void",
+                          },
+                          {
+                            key: 2,
+                            value: "false",
+                          },
+                          {
+                            key: 3,
+                            value: "undefined",
+                          },
+                        ],
+                        [
+                          {
+                            key: 0,
+                            value: "readOnly",
+                          },
+                          {
+                            key: 1,
+                            value: "boolean",
+                          },
+                          {
+                            key: 2,
+                            value: "false",
+                          },
+                          {
+                            key: 3,
+                            value: "false",
+                          },
+                        ],
                       ]}
                     />
                   </Stack>
