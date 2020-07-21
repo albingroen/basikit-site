@@ -2855,10 +2855,10 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-basikit@^1.5.7:
-  version "1.5.7"
-  resolved "https://registry.yarnpkg.com/basikit/-/basikit-1.5.7.tgz#9ba3d1d5c6667300ce151cfdff8b7591e84b6276"
-  integrity sha512-OFOhLzf1TK2CsblrNN0j0s/75V9QGstEXwDnvCPgZORHIWfNyS71uhlbtT7ZxeD8M+4lIMRP/7Bg0H33R/V+0Q==
+basikit@^1.5.8:
+  version "1.5.8"
+  resolved "https://registry.yarnpkg.com/basikit/-/basikit-1.5.8.tgz#31e6836cc4c79a03d75125917ca54a7ce123eb1a"
+  integrity sha512-Nm4FS8GFynO3m7ffsgs3EaIijPneVF6y6gZdB+sxBqjyfboyOpVahq5Wb4xnrf6rSMR2u9tTx/HIMmN7+Slsrw==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.30"
     "@fortawesome/free-solid-svg-icons" "^5.14.0"
