@@ -333,6 +333,11 @@ function Docs() {
                     <Text code>yarn add basikit</Text>
                   </Stack>
 
+                  <Stack direction="column">
+                    <Text>Link Text:</Text>
+                    <Text variant="link">Go to the previous page</Text>
+                  </Stack>
+
                   <div className="code-block">
                     <CopyBlock
                       text={`const { Heading, Text } = Typography
