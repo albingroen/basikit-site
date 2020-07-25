@@ -30,6 +30,7 @@ import {
   useMessage,
   useNotification,
   useModal,
+  useToast,
   Rating,
 } from "basikit";
 import { logo } from "../lib";
@@ -42,19 +43,16 @@ function Docs() {
   const { pushNotification } = useNotification();
   const { pushMessage } = useMessage();
   const { pushModal } = useModal();
+  const { pushToast } = useToast();
 
   const [drawer, setDrawer] = React.useState<boolean>(false);
   const [autocompleteValue, setAutocompleteValue] = React.useState<string>();
   const [checked, setChecked] = React.useState<boolean>(false);
   const [modalOpen, setModalOpen] = React.useState<boolean>(false);
   const [selectValue, setSelectValue] = React.useState<string>();
-  const [toastErrorOpen, setToastErrorOpen] = React.useState<boolean>(false);
   const [isSkeletonOn, setIsSkeletonOn] = React.useState<boolean>(false);
   const [toastOpen, setToastOpen] = React.useState<boolean>(false);
   const [rating, setRating] = React.useState<0 | 1 | 2 | 3 | 4 | 5>(3);
-  const [toastSuccessOpen, setToastSuccessOpen] = React.useState<boolean>(
-    false
-  );
 
   return (
     <div className="documentation-page">
@@ -1012,83 +1010,257 @@ function Docs() {
                   </Stack>
 
                   <Stack size="small">
+                    <Button
+                      onClick={() =>
+                        pushToast({
+                          id: "test-uncontrolled-toast",
+                          title: "Toast title text",
+                        })
+                      }
+                    >
+                      Open uncontrolled toast
+                    </Button>
                     <Button onClick={() => setToastOpen(true)}>
-                      Open default toast
-                    </Button>
-                    <Button
-                      variant="success"
-                      onClick={() => setToastSuccessOpen(true)}
-                    >
-                      Open success toast
-                    </Button>
-                    <Button
-                      variant="error"
-                      onClick={() => setToastErrorOpen(true)}
-                    >
-                      Open error toast
+                      Open controlled toast
                     </Button>
                   </Stack>
 
                   <div className="code-block">
                     <CopyBlock
-                      text={`{toastOpen && (
-    <Toast onClose={() => setToastOpen(false)}>Default Toast</Toast>
-  )}
+                      text={`const { pushToast } = useToast()
 
-  {toastSuccessOpen && (
-    <Toast variant="success" onClose={() => setToastSuccessOpen(false)}>
-      Success Toast
-    </Toast>
-  )}
+<Button 
+  onClick={() =>
+    pushToast({
+      id: "test-uncontrolled-toast",
+      title: "Toast title text",
+    })
+  }
+>
+  Open uncontrolled toast
+</Button>
 
-  {toastErrorOpen && (
-    <Toast variant="error" onClose={() => setToastErrorOpen(false)}>
-      Error Toast
-    </Toast>
-  )}`}
+// This generates a component that looks like this:
+// <Toast
+//  id={id}
+//  title={title}
+//  duration={duration}
+//  variant={variant}
+// />
+
+<Button onClick={() => setToastOpen(true)}>
+  Open controlled toast
+</Button>
+
+{toastOpen && (
+  <Toast title="Default Toast" onClose={() => setToastOpen(false)} />
+)}
+`}
                       language="jsx"
                       theme={nord}
                     />
                   </div>
 
                   <Stack direction="column" block>
-                    <Heading level={3}>Component properties</Heading>
-                    <table className="table">
-                      <tr>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>Required</th>
-                        <th>Default</th>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>variant</code>
-                        </td>
-                        <td>
-                          <code>'default' | 'success' | 'error'</code>
-                        </td>
-                        <td>
-                          <code>false</code>
-                        </td>
-                        <td>
-                          <code>'default'</code>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>onClose</code>
-                        </td>
-                        <td>
-                          <code>{"() => void"}</code>
-                        </td>
-                        <td>
-                          <code>true</code>
-                        </td>
-                        <td>
-                          <code>undefined</code>
-                        </td>
-                      </tr>
-                    </table>
+                    <Heading level={3}>
+                      Component properties (uncontrolled)
+                    </Heading>
+                    <Table
+                      columns={[
+                        {
+                          key: 0,
+                          title: "Name",
+                        },
+                        {
+                          key: 1,
+                          title: "Type",
+                        },
+                        {
+                          key: 2,
+                          title: "Required",
+                        },
+                        {
+                          key: 3,
+                          title: "Default",
+                        },
+                      ]}
+                      rows={[
+                        [
+                          {
+                            key: 0,
+                            value: "id",
+                          },
+                          {
+                            key: 1,
+                            value: "string",
+                          },
+                          {
+                            key: 2,
+                            value: "true",
+                          },
+                          {
+                            key: 3,
+                            value: "undefined",
+                          },
+                        ],
+                        [
+                          {
+                            key: 0,
+                            value: "title",
+                          },
+                          {
+                            key: 1,
+                            value: "string",
+                          },
+                          {
+                            key: 2,
+                            value: "true",
+                          },
+                          {
+                            key: 3,
+                            value: "undefined",
+                          },
+                        ],
+                        [
+                          {
+                            key: 0,
+                            value: "duration",
+                          },
+                          {
+                            key: 1,
+                            value: "number",
+                          },
+                          {
+                            key: 2,
+                            value: "false",
+                          },
+                          {
+                            key: 3,
+                            value: "3000",
+                          },
+                        ],
+                        [
+                          {
+                            key: 0,
+                            value: "variant",
+                          },
+                          {
+                            key: 1,
+                            value:
+                              "'default' | 'primary' | 'success' | 'warning' | 'error'",
+                          },
+                          {
+                            key: 2,
+                            value: "false",
+                          },
+                          {
+                            key: 3,
+                            value: "default",
+                          },
+                        ],
+                      ]}
+                    />
+                  </Stack>
+
+                  <Stack direction="column" block>
+                    <Heading level={3}>
+                      Component properties (controlled)
+                    </Heading>
+                    <Table
+                      columns={[
+                        {
+                          key: 0,
+                          title: "Name",
+                        },
+                        {
+                          key: 1,
+                          title: "Type",
+                        },
+                        {
+                          key: 2,
+                          title: "Required",
+                        },
+                        {
+                          key: 3,
+                          title: "Default",
+                        },
+                      ]}
+                      rows={[
+                        [
+                          {
+                            key: 0,
+                            value: "title",
+                          },
+                          {
+                            key: 1,
+                            value: "string",
+                          },
+                          {
+                            key: 2,
+                            value: "true",
+                          },
+                          {
+                            key: 3,
+                            value: "undefined",
+                          },
+                        ],
+                        [
+                          {
+                            key: 0,
+                            value: "onClose",
+                          },
+                          {
+                            key: 1,
+                            value: "() => void",
+                          },
+                          {
+                            key: 2,
+                            value: "true",
+                          },
+                          {
+                            key: 3,
+                            value: "undefined",
+                          },
+                        ],
+                        [
+                          {
+                            key: 0,
+                            value: "duration",
+                          },
+                          {
+                            key: 1,
+                            value: "number",
+                          },
+                          {
+                            key: 2,
+                            value: "false",
+                          },
+                          {
+                            key: 3,
+                            value: "3000",
+                          },
+                        ],
+                        [
+                          {
+                            key: 0,
+                            value: "variant",
+                          },
+                          {
+                            key: 1,
+                            value:
+                              "'default' | 'primary' | 'success' | 'warning' | 'error'",
+                          },
+                          {
+                            key: 2,
+                            value: "false",
+                          },
+                          {
+                            key: 3,
+                            value: "default",
+                          },
+                        ],
+                      ]}
+                    />
                   </Stack>
                 </Stack>
               </Card>
@@ -4111,17 +4283,7 @@ function Docs() {
         </Stack>
 
         {toastOpen && (
-          <Toast onClose={() => setToastOpen(false)}>Default Toast</Toast>
-        )}
-        {toastSuccessOpen && (
-          <Toast variant="success" onClose={() => setToastSuccessOpen(false)}>
-            Success Toast
-          </Toast>
-        )}
-        {toastErrorOpen && (
-          <Toast variant="error" onClose={() => setToastErrorOpen(false)}>
-            Error Toast
-          </Toast>
+          <Toast title="Default Toast" onClose={() => setToastOpen(false)} />
         )}
       </div>
     </div>
