@@ -243,7 +243,7 @@ function Docs() {
                       text={`// src/index.tsx
   import React from 'react'
   import ReactDOM from 'react-dom'
-  import { Container } from 'basikit
+  import { Container } from 'basikit'
   import 'basikit/dist/index.css'
   import App from './App'
 
