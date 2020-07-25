@@ -24,7 +24,6 @@ import {
   Switch,
   Table,
   Tag,
-  Toast,
   Tooltip,
   Typography,
   useMessage,
@@ -51,7 +50,6 @@ function Docs() {
   const [modalOpen, setModalOpen] = React.useState<boolean>(false);
   const [selectValue, setSelectValue] = React.useState<string>();
   const [isSkeletonOn, setIsSkeletonOn] = React.useState<boolean>(false);
-  const [toastOpen, setToastOpen] = React.useState<boolean>(false);
   const [rating, setRating] = React.useState<0 | 1 | 2 | 3 | 4 | 5>(3);
 
   return (
@@ -1013,15 +1011,59 @@ function Docs() {
                     <Button
                       onClick={() =>
                         pushToast({
-                          id: "test-uncontrolled-toast",
+                          id: String(Math.random()),
                           title: "Toast title text",
                         })
                       }
                     >
-                      Open uncontrolled toast
+                      Open default toast
                     </Button>
-                    <Button onClick={() => setToastOpen(true)}>
-                      Open controlled toast
+                    <Button
+                      variant="primary"
+                      onClick={() =>
+                        pushToast({
+                          id: String(Math.random()),
+                          title: "Toast title text",
+                          variant: "primary",
+                        })
+                      }
+                    >
+                      Open primary toast
+                    </Button>
+                    <Button
+                      variant="success"
+                      onClick={() =>
+                        pushToast({
+                          id: String(Math.random()),
+                          title: "Toast title text",
+                          variant: "success",
+                        })
+                      }
+                    >
+                      Open success toast
+                    </Button>
+                    <Button
+                      onClick={() =>
+                        pushToast({
+                          id: String(Math.random()),
+                          title: "Toast title text",
+                          variant: "warning",
+                        })
+                      }
+                    >
+                      Open warning toast
+                    </Button>
+                    <Button
+                      variant="error"
+                      onClick={() =>
+                        pushToast({
+                          id: String(Math.random()),
+                          title: "Toast title text",
+                          variant: "error",
+                        })
+                      }
+                    >
+                      Open error toast
                     </Button>
                   </Stack>
 
@@ -1029,42 +1071,76 @@ function Docs() {
                     <CopyBlock
                       text={`const { pushToast } = useToast()
 
-<Button 
-  onClick={() =>
-    pushToast({
-      id: "test-uncontrolled-toast",
-      title: "Toast title text",
-    })
-  }
->
-  Open uncontrolled toast
-</Button>
+<Stack size="small">
+  <Button
+    onClick={() =>
+      pushToast({
+        id: String(Math.random()),
+        title: "Toast title text",
+      })
+    }
+  >
+    Open default toast
+  </Button>
 
-// This generates a component that looks like this:
-// <Toast
-//  id={id}
-//  title={title}
-//  duration={duration}
-//  variant={variant}
-// />
+  <Button
+    variant="primary"
+    onClick={() =>
+      pushToast({
+        id: String(Math.random()),
+        title: "Toast title text",
+        variant: "primary",
+      })
+    }
+  >
+    Open primary toast
+  </Button>
 
-<Button onClick={() => setToastOpen(true)}>
-  Open controlled toast
-</Button>
+  <Button
+    variant="success"
+    onClick={() =>
+      pushToast({
+        id: String(Math.random()),
+        title: "Toast title text",
+        variant: "success",
+      })
+    }
+  >
+    Open success toast
+  </Button>
 
-{toastOpen && (
-  <Toast title="Default Toast" onClose={() => setToastOpen(false)} />
-)}
-`}
+  <Button
+    onClick={() =>
+      pushToast({
+        id: String(Math.random()),
+        title: "Toast title text",
+        variant: "warning",
+      })
+    }
+  >
+    Open warning toast
+  </Button>
+
+  <Button
+    variant="error"
+    onClick={() =>
+      pushToast({
+        id: String(Math.random()),
+        title: "Toast title text",
+        variant: "error",
+      })
+    }
+  >
+    Open error toast
+  </Button>
+</Toast>`}
                       language="jsx"
                       theme={nord}
                     />
                   </div>
 
                   <Stack direction="column" block>
-                    <Heading level={3}>
-                      Component properties (uncontrolled)
-                    </Heading>
+                    <Heading level={3}>Component properties</Heading>
                     <Table
                       columns={[
                         {
@@ -1136,18 +1212,17 @@ function Docs() {
                           },
                           {
                             key: 3,
-                            value: "3000",
+                            value: "5000",
                           },
                         ],
                         [
                           {
                             key: 0,
-                            value: "variant",
+                            value: "autoClose",
                           },
                           {
                             key: 1,
-                            value:
-                              "'default' | 'primary' | 'success' | 'warning' | 'error'",
+                            value: "boolean",
                           },
                           {
                             key: 2,
@@ -1155,89 +1230,7 @@ function Docs() {
                           },
                           {
                             key: 3,
-                            value: "default",
-                          },
-                        ],
-                      ]}
-                    />
-                  </Stack>
-
-                  <Stack direction="column" block>
-                    <Heading level={3}>
-                      Component properties (controlled)
-                    </Heading>
-                    <Table
-                      columns={[
-                        {
-                          key: 0,
-                          title: "Name",
-                        },
-                        {
-                          key: 1,
-                          title: "Type",
-                        },
-                        {
-                          key: 2,
-                          title: "Required",
-                        },
-                        {
-                          key: 3,
-                          title: "Default",
-                        },
-                      ]}
-                      rows={[
-                        [
-                          {
-                            key: 0,
-                            value: "title",
-                          },
-                          {
-                            key: 1,
-                            value: "string",
-                          },
-                          {
-                            key: 2,
                             value: "true",
-                          },
-                          {
-                            key: 3,
-                            value: "undefined",
-                          },
-                        ],
-                        [
-                          {
-                            key: 0,
-                            value: "onClose",
-                          },
-                          {
-                            key: 1,
-                            value: "() => void",
-                          },
-                          {
-                            key: 2,
-                            value: "true",
-                          },
-                          {
-                            key: 3,
-                            value: "undefined",
-                          },
-                        ],
-                        [
-                          {
-                            key: 0,
-                            value: "duration",
-                          },
-                          {
-                            key: 1,
-                            value: "number",
-                          },
-                          {
-                            key: 2,
-                            value: "false",
-                          },
-                          {
-                            key: 3,
-                            value: "3000",
                           },
                         ],
                         [
@@ -1629,7 +1622,6 @@ function Docs() {
                           {
                             key: 0,
                             value: "Column 1",
-                            onClick: () => setToastOpen(true),
                           },
                           {
                             key: 1,
@@ -3160,16 +3152,7 @@ function Docs() {
     >
       Error notification
     </Button>
-  </Stack>
-
-  // This generates a component that looks like this:
-  // <Notification
-  //  id={id}
-  //  title={title}
-  //  description={description}
-  //  duration={duration}
-  //  autoClose={autoClose}
-  // />`}
+  </Stack>`}
                       language="jsx"
                       theme={nord}
                     />
@@ -4281,10 +4264,6 @@ function Docs() {
             </Stack>
           </Stack>
         </Stack>
-
-        {toastOpen && (
-          <Toast title="Default Toast" onClose={() => setToastOpen(false)} />
-        )}
       </div>
     </div>
   );
