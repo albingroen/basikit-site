@@ -703,9 +703,9 @@ function Docs() {
                   </Stack>
 
                   <Popover
-                    content={<Input autoFocus placeholder="Popover input..." />}
+                    content={<Input placeholder="Popover input..." />}
                   >
-                    <Button>Launch popover</Button>
+                    <Button block>Launch popover</Button>
                   </Popover>
 
                   <div className="code-block">
@@ -1290,25 +1290,23 @@ function Docs() {
                     </Button>
                   </Stack>
 
-                  {modalOpen && (
-                    <Modal onClose={() => setModalOpen(false)}>
-                      <Stack direction="column">
-                        <Heading level={2}>Basic modal</Heading>
-                        <Divider />
-                        <Text>
-                          This is a basic modal component. You can have anything
-                          want inside of here
-                        </Text>
-                        <Button
-                          style={{ marginTop: "1rem" }}
-                          block
-                          onClick={() => setModalOpen(false)}
-                        >
-                          Close modal
-                        </Button>
-                      </Stack>
-                    </Modal>
-                  )}
+                  <Modal onClose={() => setModalOpen(false)} isVisible={modalOpen}>
+                    <Stack direction="column">
+                      <Heading level={2}>Basic modal</Heading>
+                      <Divider />
+                      <Text>
+                        This is a basic modal component. You can have anything
+                        want inside of here
+                      </Text>
+                      <Button
+                        style={{ marginTop: "1rem" }}
+                        block
+                        onClick={() => setModalOpen(false)}
+                      >
+                        Close modal
+                      </Button>
+                    </Stack>
+                  </Modal>
 
                   <div className="code-block">
                     <CopyBlock
@@ -4117,27 +4115,25 @@ function Docs() {
 
                   <Button onClick={() => setDrawer(true)}>Open drawer</Button>
 
-                  {drawer && (
-                    <Drawer
-                      title="Drawer title"
-                      onClose={() => setDrawer(false)}
-                    >
-                      <Text>This is the content of the drawer.</Text>
-                    </Drawer>
-                  )}
+                  <Drawer
+                    isVisible={drawer}
+                    title="Drawer title"
+                    onClose={() => setDrawer(false)}
+                  >
+                    <Text>This is the content of the drawer.</Text>
+                  </Drawer>
 
                   <div className="code-block">
                     <CopyBlock
                       text={`<Button onClick={() => setIsDrawerOpen(true)}>Open drawer</Button>
 
-{isDrawerOpen && (
-  <Drawer
-    title="Search a user"
-    onClose={() => setDrawer(false)}
-  >
-    <Text>This is the content of the drawer.</Text>
-  </Drawer>
-)}`}
+<Drawer
+  title="Search a user"
+  onClose={() => setIsDrawerOpen(false)}
+  isVisible={isDrawerOpen}
+>
+  <Text>This is the content of the drawer.</Text>
+</Drawer>`}
                       language="jsx"
                       theme={nord}
                     />
