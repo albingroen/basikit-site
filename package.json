@@ -5,7 +5,7 @@
   "dependencies": {
     "basikit": "^1.6.4",
     "feedback-fish": "^0.1.11",
-    "lodash-es": "^4.17.15",
+    "lodash-es": "^4.17.21",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-code-blocks": "^0.0.8",
